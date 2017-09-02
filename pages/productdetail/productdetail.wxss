@@ -1,0 +1,165 @@
+/* productdetial.wxss */
+
+.prodect-desc {
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.prodect-desc-name {
+  width: 100%;
+  font-size: 30rpx;
+  color: black;
+  padding-left: 5px;
+}
+
+.prodect-desc-price {
+  width: 100%;
+  font-size: 24rpx;
+  height: 25px;
+  color: red;
+  padding-left: 5px;
+}
+.line{
+   background-color: #444;
+    width: 100%;
+    height: 10px;
+}
+.detail-image-title{
+  background-color: #fff;
+  width: 100%;
+    height: 30px;
+    display: flex;
+    font-size: 30rpx;
+    /*水平居中*/
+    justify-content: center;
+    /* 垂直居中  align-items: center;*/
+}
+.prodect-detail{
+  margin-bottom: 50px;
+}
+.detailPic{
+  background-color: #444;
+  width:100%;
+  height: 200px;
+}
+.line-image{
+ background-color: #444;
+    width: 100%;
+    height: 1px;
+}
+.prodect_detail_buttom{
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 10rpx;
+}
+.prodect_detail_buttom_l{
+  float: left;
+  background-color: gainsboro;
+  width: 30%;
+    height: 40px;
+
+text-align: center;
+  line-height: 40px;
+}
+.prodect_detail_buttom_r{
+  float: right;
+  background-color: red;
+  height: 40px;
+  width: 70%;
+  text-align: center;
+  color: wheat;
+  line-height: 40px;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+.buyTop{
+  width: 100%;
+}
+.buyTop_image{
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+.buyTop_des{
+  float: left;
+  margin-left: 50px;
+}
+.buyTop_des_title{
+  font-size: 28rpx;
+
+}
+.buyTop_des_price{
+  font-size: 28rpx;
+  color: red;
+}
+.buyTop_del{
+   width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  float: right;
+  margin-top: -5px;
+}
+.buyline{
+  height: 1rpx;
+  background-color: #ccc;
+  margin-left:10px;
+  margin-right: 10px; 
+}
+.buyNum{
+  width: 100%;
+  line-height: 45px;
+}
+.buyNum_right{
+  float: right;
+  margin-right: 20px;
+}
+.buyNum_del{
+  margin:3px;
+  font-size: 40rpx;
+}
+.buyNum_count{
+  margin-left:5px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  font-size: 30rpx;
+}
+.buyNum_add{
+  margin:3px;
+  font-size: 40rpx;
+}
+.addShopCar{
+  width:100%; 
+  color: white;
+  background-color: red;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 35px;
+  }
+

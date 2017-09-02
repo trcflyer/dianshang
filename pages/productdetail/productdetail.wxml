@@ -1,0 +1,53 @@
+<view >
+  <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000">
+    <block wx:for="{{productDetial.detailTopPicList}}" wx:key="*this">
+      <swiper-item>
+        <image style="width: {{winWidth}}px;" mode="scaleToFill" src="{{host}}{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="prodect-desc">
+    <text class="prodect-desc-name">{{productDetial.productDetial.name}} \n </text>
+     <text class="prodect-desc-name">{{productDetial.productDetial.title}} \n </text> <text class="prodect-desc-name">{{productDetial.productDetial.intro}} \n</text>
+    <text class="prodect-desc-price">￥{{productDetial.productDetial.price}}</text>
+  </view>
+  <view class="line" ></view>
+  <text class="detail-image-title">
+       商品详情
+  </text>
+  <view class="prodect-detail">
+    <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
+    <image class="detailPic" src="{{host}}{{item}}" mode="scaleToFill"></image>
+    <view class="line-image" ></view>
+    </block>
+  </view>
+  <view class="prodect_detail_buttom">
+    <view class="prodect_detail_buttom_l"></view>
+    <view class="prodect_detail_buttom_r" bindtap="showModal">加入购物车</view>
+  </view>
+
+<!--添加购物车弹出框  -->
+<view class="productdetail_shopcar">
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+<view class="buyTop">
+  <image class="buyTop_image" src="https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=331642910,199523927&fm=202"></image>
+  <view class="buyTop_des">
+    <text  class="buyTop_des_title">标题\n</text>
+    <text class="buyTop_des_price">￥5</text>
+  </view>
+  <image class="buyTop_del" bindtap="hideModal" src="../../image/shopcar_del.png"></image>
+</view>
+<view class="buyline"></view>
+<view class="buyNum">
+ <text style="font-size:22rpx; margin-left:10px; ">购买数量</text>
+ <view class="buyNum_right">
+  <text class="buyNum_del" bindtap="buyNumDel">-</text>
+  <text class="buyNum_count">{{buyCount}}</text>
+  <text class="buyNum_add" bindtap="buyNumAdd">+</text>
+ </view>
+</view>
+<view class="addShopCar" bindtap="addShopCar">加入购物车</view>
+</view>
+</view>
+</view>
