@@ -37,18 +37,18 @@ Page({
       }
     });
 
-    var self = this;
     /**
      * 获取用户信息
      */
     wx.getUserInfo({
       success: function (res) {
-        self.setData({
+        that.setData({
           thumb: res.userInfo.avatarUrl,
           nickname: res.userInfo.nickName
         })
       }
     })
+    that.getUserByUserIdServlet();
   },
 
   /**
@@ -75,7 +75,6 @@ Page({
         })
       }
     });
-    self.getUserByUserIdServlet();
   },
 
   /**
