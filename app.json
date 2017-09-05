@@ -1,14 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/logs",
     "pages/my/my",
     "pages/address/address",
     "pages/productdetail/productdetail",
     "pages/shopcar/shopcar",
     "pages/aboutus/aboutus",
     "pages/myorder/myorder",
-    "pages/test/test",
     "pages/productlist/productlist"
   ],
   "tabBar": {
@@ -27,12 +25,6 @@
       },
       {
         "pagePath": "pages/my/my",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
-        "text": "我的"
-      },
-      {
-        "pagePath": "pages/test/test",
         "iconPath": "image/icon_API.png",
         "selectedIconPath": "image/icon_API_HL.png",
         "text": "我的"
