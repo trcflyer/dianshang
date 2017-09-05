@@ -19,81 +19,14 @@
  <input class="input" confirm-type="search" name="userName" placeholder="请输入商品名" bindconfirm="searchInput"/>
  <image  src="../../image/search.png"></image>
  </view>
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
-    <!-- 1 -->  
-    <swiper-item > 
-      <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
-        <view wx:if="{{idx % 2==0}}" class="product-item-left" data-product-id="{{itemName.id}}" bindtap="prodectTap" >
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-        <view wx:if="{{idx % 2==1}}" class="product-item-right" data-product-id="{{itemName.id}}" bindtap="prodectTap">
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
+
+<block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
+         <view class="orders-detail" bindtap="prodectTap" data-product-id="{{itemName.id}}">
+                <image src="{{host}}{{itemName.cover}}"></image>
+                <view class="">{{itemName.name}} {{itemName.name}}</view>
+                <view class="product-buyNum">378人购买</view>
+                <text class="product-price">￥:{{itemName.price}}</text>
+                <text class="product-price-old">￥:{{itemName.price}}</text>
+            </view>
       </block>
-    </swiper-item>
-    <!-- 2 -->
-    <swiper-item>     
-       <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper2">
-        <view wx:if="{{idx % 2==0}}" class="product-item-left" data-product-id="{{itemName.id}}" bindtap="prodectTap" >
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-        <view wx:if="{{idx % 2==1}}" class="product-item-right" data-product-id="{{itemName.id}}" bindtap="prodectTap">
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-      </block> 
-    </swiper-item> 
-    <!-- 3 -->
-    <swiper-item>  
-       <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper3">
-        <view wx:if="{{idx % 2==0}}" class="product-item-left" data-product-id="{{itemName.id}}" bindtap="prodectTap" >
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-        <view wx:if="{{idx % 2==1}}" class="product-item-right" data-product-id="{{itemName.id}}" bindtap="prodectTap">
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-      </block>  
-    </swiper-item> 
-    <!-- 4 -->
-    <swiper-item>   
-       <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper4">
-        <view wx:if="{{idx % 2==0}}" class="product-item-left" data-product-id="{{itemName.id}}" bindtap="prodectTap" >
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-        <view wx:if="{{idx % 2==1}}" class="product-item-right" data-product-id="{{itemName.id}}" bindtap="prodectTap">
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-      </block>  
-    </swiper-item>
-    <!-- 5 -->
-    <swiper-item>  
-       <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper5">
-        <view wx:if="{{idx % 2==0}}" class="product-item-left" data-product-id="{{itemName.id}}" bindtap="prodectTap" >
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-        <view wx:if="{{idx % 2==1}}" class="product-item-right" data-product-id="{{itemName.id}}" bindtap="prodectTap">
-          <image class="product-image" mode="scaleToFill" src="{{host}}{{itemName.cover}}"></image>
-          <text class="product-desc">{{itemName.name}}</text>
-          <text class="product-price">￥:{{itemName.price}}</text>
-        </view>
-      </block>
-    </swiper-item>   
-</swiper>
 </view>

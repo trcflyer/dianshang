@@ -1,0 +1,10 @@
+<!--productlist.wxml-->
+<block wx:for="{{products}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
+         <view class="orders-detail" bindtap="prodectTap" data-product-id="{{itemName.id}}">
+    <image src="{{host}}{{itemName.cover}}"></image>
+    <view class="">{{itemName.name}} {{itemName.name}}</view>
+    <view class="product-buyNum">378人购买</view>
+    <text class="product-price">￥:{{itemName.price}}</text>
+    <text class="product-price-old">￥:{{itemName.price}}</text>
+  </view>
+</block>

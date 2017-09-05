@@ -8,7 +8,8 @@
     "pages/shopcar/shopcar",
     "pages/aboutus/aboutus",
     "pages/myorder/myorder",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/productlist/productlist"
   ],
   "tabBar": {
     "list": [

@@ -15,7 +15,7 @@ Page({
     winWidth: 0,
     winHeight: 0,
     // tab切换
-    currentTab: 0,
+    currentTab: '0',
     currentPage:1,
     searchKey:'',//搜索关键字
     products:[]//商品列表
@@ -39,15 +39,35 @@ Page({
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
-      that.setData({
-        currentTab: e.target.dataset.current
-      });
-      that.gethttpProductListByCategoryServlet();
+      // that.setData({
+      //   currentTab: e.target.dataset.current,
+      //   currentPage:1,
+      // });
+      // that.gethttpProductListByCategoryServlet();
+      var currentTab = e.target.dataset.current;
+      wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab }) 
     }
   },
   //上拉加载
   onReachBottom: function(){
+    let that = this;
+    let p = that.data.currentPage;
+    p = p+1;
+    that.setData({
+      currentPage:p
+    });
+    that.gethttpProductListByCategoryServlet();
+  },
 
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    let that = this;
+    that.setData({
+      currentPage: 1
+    });
+    that.gethttpProductListByCategoryServlet();
   },
   onLoad: function () {
     console.log('onLoad')
@@ -135,7 +155,12 @@ Page({
     let that = this;
     let categoryid = parseInt(that.data.currentTab);
     let page = that.data.currentPage;
-    that.showLoading();
+   // that.showLoading();
+    var tempProdect = [];
+    if (page != 1){
+      tempProdect =  that.data.products
+    }
+    console.log(that.data.currentPage);
     wx.request({
       url: productListByCategoryServlet,
       method: 'POST',
@@ -150,13 +175,22 @@ Page({
       },
       success: function (res) {
         console.info("[index][http][productListByCategoryServlet][success]");
-        that.cancelLoading();
+       // that.cancelLoading();
+        if (res.data.productListByCategoryList.length == 0){
           that.setData({
-            products: res.data.productListByCategoryList
+            currentPage: that.data.currentPage-1,
+          });
+          return ;
+        }
+        for (var i = 0; i < res.data.productListByCategoryList.length;i++){
+          tempProdect.push(res.data.productListByCategoryList[i])
+        }
+          that.setData({
+            products: tempProdect,
           });
       },
       fail: function ({errMsg}) {
-        that.cancelLoading();
+        //that.cancelLoading();
         console.info("[index][http][productListByCategoryServlet][fail]:" + errMsg);
       }
     })
