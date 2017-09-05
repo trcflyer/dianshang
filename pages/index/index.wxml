@@ -16,17 +16,17 @@
     <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">{{categoryList[4].name}}</view>
 </view>  
 <view class="search">
- <input class="input" confirm-type="search" name="userName" placeholder="请输入商品名" bindconfirm="searchInput"/>
+ <input class="input" confirm-type="search" name="userName" placeholder="" bindconfirm="searchInput"/>
  <image  src="../../image/search.png"></image>
  </view>
 
 <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
          <view class="orders-detail" bindtap="prodectTap" data-product-id="{{itemName.id}}">
                 <image src="{{host}}{{itemName.cover}}"></image>
-                <view class="">{{itemName.name}} {{itemName.name}}</view>
-                <view class="product-buyNum">378人购买</view>
-                <text class="product-price">￥:{{itemName.price}}</text>
-                <text class="product-price-old">￥:{{itemName.price}}</text>
+                <view class="item-title">{{itemName.name}} {{itemName.name}}</view>
+                <view class="item-buyNum">378人购买</view>
+                <text class="item-price">￥:{{itemName.price}}</text>
+                <text class="item-price-old">￥:{{itemName.price}}</text>
             </view>
       </block>
 </view>
