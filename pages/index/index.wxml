@@ -26,7 +26,7 @@
                 <view class="item-title">{{itemName.name}} {{itemName.name}}</view>
                 <view class="item-buyNum">378人购买</view>
                 <text class="item-price">￥:{{itemName.price}}</text>
-                <text class="item-price-old">￥:{{itemName.price}}</text>
+                <text class="item-price-old">￥:{{itemName.baseprice}}</text>
             </view>
       </block>
 </view>

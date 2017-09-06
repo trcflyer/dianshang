@@ -5,6 +5,6 @@
     <view class="">{{itemName.name}} {{itemName.name}}</view>
     <view class="product-buyNum">378人购买</view>
     <text class="product-price">￥:{{itemName.price}}</text>
-    <text class="product-price-old">￥:{{itemName.price}}</text>
+    <text class="product-price-old">￥:{{itemName.baseprice}}</text>
   </view>
 </block>
