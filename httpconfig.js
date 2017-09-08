@@ -1,7 +1,7 @@
 /**
  * 小程序网络请求配置文件
  */
-var host = "https://123.207.213.22:8080/ssh_eshop"
+var host = "https://naru.net.cn/ssh_eshop"
 
 var httpconfig = {
   // host
