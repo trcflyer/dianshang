@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import '../common/common.wxss';
+
 .containe{
   background-color: #444444
 
@@ -30,29 +32,39 @@
 .swiper-box view{
 	text-align: center;
 }
-.search{
+.search {
   position: fixed;
-  border-style: solid;
-  border-color: whitesmoke;
-  border-width:1px;
+  border: 1px solid #cdcdcd;
   border-radius: 50%;
-  top: 6px;
-  right: 8px;
-  height: 24px;
-  width: 24px;
+  top: 1rpx;
+  right: 2%;
+  height: 60rpx;
+  width: 60rpx;
   background-color: white;
-  box-shadow: 1px 1px 2px #666;
+  opacity: .6;
+  z-index: 999;
+}
+.search:active,
+.search:hover {
+  opacity: 1;
+  right: 2%;
+  width: 96%;
+  border-color: whitesmoke;
+  border-radius: 30rpx;
+  background: white;
 }
 .search image{
     position: absolute;
-    left: 10rpx;
-    top: 6rpx;
-    width: 18px;
-    height: 18px;
+    left: 12rpx;
+    top: 12rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 .search .input{
-  font-size: 25rpx;
-  color: white
+  padding-left: 60rpx;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  color: #333;
 }
 .products-item{
    position: relative;
@@ -78,67 +90,4 @@
 }
 .item-image{
   width: 97%; height: 74px; background-color: #eeeeee;
-}
-.item-desc{
-  float:left;
-  width:95%;
-  height: 12%;
-  font-size:22rpx;
-  color:black;
-  margin-left: 2px;
-  margin-right: 10px;
-  overflow: hidden;white-space: nowrap;
-  text-overflow:ellipsis;
-}
-
-.flex-wrp{
-  height: 105px;
-  display:flex;
-  background-color: #FFFFFF;
-}
-
-.orders-detail{
-  position: relative;
-  height: 120rpx;
-  padding: 20rpx;
-  padding-left: 180rpx;
-  border-bottom: 1rpx solid #e9e9e9;
-  background-color: #FFFFFF;
-}
-.orders-detail .item-title {
-  font-size: 30rpx;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  line-height: 40rpx;
-}
-.item-buyNum{
-  line-height: 30rpx;
-  color:#999;
-  font-size:26rpx;
-}
-.item-price{
-    font-size:32rpx;
-    font-weight: bold;
-    color:red;
-    line-height: 50rpx;
-}
-.item-price-old{
-    font-size:25rpx;
-    margin-left: 7px;
-    color:#777;
-    margin-top: 2px;
-    text-decoration:line-through
-}
-.orders-detail image{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 160rpx;
-  height: 160rpx;
-}
-.orders-detail .item-name{
-  position: absolute;
-  font-size: 35rpx;
-  line-height: 40rpx;
 }

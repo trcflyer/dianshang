@@ -6,13 +6,26 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="prodect-desc">
-    <text class="prodect-desc-name">{{productDetial.productDetial.name}} \n </text>
-     <text class="prodect-desc-name">{{productDetial.productDetial.title}} \n </text> <text class="prodect-desc-name">{{productDetial.productDetial.intro}} \n</text>
-    <text class="prodect-desc-price">￥{{productDetial.productDetial.price}}</text>
+  <view class="prodect-desc item-row">
+    <view class="item-title">{{productDetial.productDetial.name}}</view>
+    
+      <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
+      <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
+      <view class='item-about'>
+        <text class="trans-cost">{{'运费 xxxxxxx'}}</text> 
+        <text class="item-stock">{{'库存  xxxxx'}}</text>       
+      </view>
+      <view class='item-about'>
+        <icon type="success_circle" size="16"/>
+        <text class="item-ensure">店铺认证</text> 
+        <icon type="success_circle" size="16"/>
+        <text class="item-ensure">线下门店</text> 
+        <icon type="success_circle" size="16"/>        
+        <text class="item-ensure">担保交易</text>                     
+      </view>
   </view>
   <view class="line" ></view>
-  <text class="detail-image-title">
+  <text class="nav-title">
        商品详情
   </text>
   <view class="prodect-detail">
@@ -43,8 +56,8 @@
  <text style="font-size:22rpx; margin-left:10px; ">购买数量</text>
  <view class="buyNum_right">
   <text class="buyNum_del" bindtap="buyNumDel">-</text>
-  <text class="buyNum_count">{{buyCount}}</text>
-  <text class="buyNum_add" bindtap="buyNumAdd">+</text>
+  <text class="add_count">{{buyCount}}</text>
+  <text class="buyNum_del" bindtap="buyNumDel">+</text>
  </view>
 </view>
 <view class="addShopCar" bindtap="addShopCar">加入购物车</view>

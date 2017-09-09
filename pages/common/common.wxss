@@ -6,3 +6,80 @@ page{
 .navigator-hover{
     background: none;
 }
+
+/*  商品列样式  */
+.item-desc{
+  float:left;
+  width:95%;
+  height: 12%;
+  font-size:22rpx;
+  color:black;
+  margin-left: 2px;
+  margin-right: 10px;
+  overflow: hidden;white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.flex-wrp{
+  height: 105px;
+  display:flex;
+  background-color: #FFFFFF;
+}
+
+.item-row{
+  position: relative;
+  height: 120rpx;
+  padding: 20rpx;
+  padding-left: 180rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+  background-color: #FFFFFF;
+}
+.item-row .item-title {
+  font-size: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 40rpx;
+}
+.item-count {
+  line-height: 30rpx;
+  color:#999;
+  font-size:26rpx;
+}
+.price-off {
+    font-size:32rpx;
+    font-weight: bold;
+    color:red;
+    line-height: 50rpx;
+}
+.item-price {
+    font-size:25rpx;
+    margin-left: 7px;
+    color:#777;
+    margin-top: 2px;
+    text-decoration:line-through
+}
+.item-row image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 160rpx;
+  height: 160rpx;
+}
+.item-row .item-name{
+  position: absolute;
+  font-size: 35rpx;
+  line-height: 40rpx;
+}
+.btn-add {
+  position: absolute;
+  right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -20px;
+  opacity: .6;
+  text-align: center;
+  background: transparent;
+  border:1px solid #cdcdcd;
+  border-radius: 50%;
+}
