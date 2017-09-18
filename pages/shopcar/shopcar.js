@@ -197,6 +197,9 @@ Page({
         that.setData({
           buyCount: 1,
         });
+        wx.showToast({
+          title: res.data.massage
+        })
         that.updateCarts(fromClick, pId);
       },
       fail: function ({ errMsg }) {

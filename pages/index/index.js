@@ -4,6 +4,7 @@ var app = getApp()
 const topImagesPathListServlet = require('../../httpconfig').topImagesPathListServlet
 const categoryListServlet = require('../../httpconfig').categoryListServlet
 const productListByCategoryServlet = require('../../httpconfig').productListByCategoryServlet
+const saveCarProductServlet = require('../../httpconfig').saveCarProductServlet
 const hostUri = require('../../httpconfig').hostUri
 Page({
   data: {
@@ -192,6 +193,37 @@ Page({
       fail: function ({errMsg}) {
         //that.cancelLoading();
         console.info("[index][http][productListByCategoryServlet][fail]:" + errMsg);
+      }
+    })
+  },
+  //加入到购物车
+  addShopCar: function (event) {
+    var pId = event.currentTarget.dataset.productId;
+    let that = this;
+    that.showLoading();
+    wx.request({
+      url: saveCarProductServlet,
+      method: 'POST',
+      data: {
+        'productid': pId,
+        'amount': "1",
+        'userid': '1'
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[index][http][saveCarProductServlet][success]" + res);
+        that.cancelLoading();
+        wx.showToast({
+          title: res.data.massage
+        })
+        app.setRefreshShopCar(true);//更新购物车
+      },
+      fail: function ({ errMsg }) {
+        that.cancelLoading();
+        that.hideModal();
+        console.info("[index][http][saveCarProductServlet][fail]:" + errMsg);
       }
     })
   }

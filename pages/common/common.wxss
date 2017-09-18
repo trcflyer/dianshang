@@ -61,10 +61,10 @@ page{
 }
 .item-row image{
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 160rpx;
-  height: 160rpx;
+  left: 10rpx;
+  top: 10rpx;
+  width: 140rpx;
+  height: 140rpx;
 }
 .item-row .item-name{
   position: absolute;

@@ -97,15 +97,17 @@
     background-size: 100%;
 }
 .cart-toatl-price{
-    float: right;
+  position: absolute;
+  left: 100px;
     width: 120rpx;
 }
 .cart-footer-gopay{
-  float: right;
+  position: absolute;
+  right: 10px;
   width: 70px;
   line-height: 70rpx;
   margin-top: 10rpx;
-  background: red;
+  border:1rpx solid #fff;
   font-size: 25rpx;
   color: white;
   text-align: center;
