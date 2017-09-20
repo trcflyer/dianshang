@@ -1,5 +1,6 @@
 // order.js
 const getUserByUserIdServlet = require('../../httpconfig').getUserByUserIdServlet
+var app = getApp()
 
 Page({
 
@@ -17,8 +18,7 @@ Page({
       phone: '',
       detail: ''
     },
-    hasAddress: false,
-    address: {}
+    hasAddress: false//是否显示地址详情
 
   },
 
@@ -47,14 +47,21 @@ Page({
     /**
      * 获取用户信息
      */
-    wx.getUserInfo({
-      success: function (res) {
-        that.setData({
-          thumb: res.userInfo.avatarUrl,
-          nickname: res.userInfo.nickName
-        })
-      }
-    })
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     that.setData({
+    //       thumb: res.userInfo.avatarUrl,
+    //       nickname: res.userInfo.nickName
+    //     })
+    //   }
+    // });
+    app.getUserInfo(function (userInfo) {
+      //更新数据
+      that.setData({
+        thumb: userInfo.avatarUrl,
+        nickname: userInfo.nickName
+      })
+    });
     that.getUserByUserIdServlet();
 
   },
@@ -138,7 +145,7 @@ Page({
           key: 'address',
           data: that.data.address,
           success() {
-            wx.navigateBack();
+            
           }
         })
       },

@@ -41,6 +41,14 @@ page{
   text-overflow: ellipsis;
   line-height: 40rpx;
 }
+.item-intro {
+  font-size: 25rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 40rpx;
+  
+}
 .item-count {
   line-height: 30rpx;
   color:#999;

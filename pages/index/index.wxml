@@ -23,7 +23,7 @@
 <block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
          <view class="item-row" bindtap="prodectTap" data-product-id="{{itemName.id}}">
                 <image  src="{{host}}{{itemName.cover}}"></image>
-                <view class="item-title">{{itemName.name}} {{itemName.name}}</view>
+                <view class="item-title">{{itemName.name}} </view>
                 <view class="item-count">月成交量：389</view>
                 <text class="price-off">￥:{{itemName.price}}</text>
                 <text class="item-price">￥:{{itemName.baseprice}}</text>

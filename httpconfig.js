@@ -8,6 +8,9 @@ var httpconfig = {
   hostUri: `${host}`,
   
   // 首页顶部swiper
+  getOpenIdServlet: `${host}/GetOpenIdServlet.servlet`,
+
+  // 首页顶部swiper
   topImagesPathListServlet: `${host}/TopImagesPathListServlet.servlet`,
 
   // 首页顶部tab栏
@@ -27,8 +30,15 @@ var httpconfig = {
 
   // 获取用户地址数据
   getUserByUserIdServlet: `${host}/GetUserByUserIdServlet.servlet`,
+
   // 保存用户地址数据
   updateUserInformationServlet: `${host}/UpdateUserInformationServlet.servlet`,
+
+  //获取历史订单数据
+  getIndentHistoryServlet: `${host}/GetIndentHistoryServlet.servlet`,
+
+  //下单
+  buyProductServlet: `${host}/BuyProductServlet.servlet`,
 };
 
 module.exports = httpconfig

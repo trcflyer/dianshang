@@ -1,19 +1,18 @@
 <view >
   <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000">
-    <block wx:for="{{productDetial.detailTopPicList}}" wx:key="*this">
+    <block wx:for="{{productDetial.detailPicList}}" wx:key="*this">
       <swiper-item>
-        <image style="width: {{winWidth}}px;" mode="scaleToFill" src="{{host}}{{item}}"></image>
+        <image style="width: {{winWidth}}px;height: {{imageHeight}}px;" mode="scaleToFill" src="{{host}}{{item}}"></image>
       </swiper-item>
     </block>
   </swiper>
   <view class="prodect-desc item-row">
-    <view class="item-title">{{productDetial.productDetial.name}}</view>
-    
+      <view class="item-title">{{productDetial.productDetial.name}} {{productDetial.productDetial.title}}</view>
       <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
       <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
       <view class='item-about'>
-        <text class="trans-cost">{{'运费 xxxxxxx'}}</text> 
-        <text class="item-stock">{{'库存  xxxxx'}}</text>       
+        <text class="trans-cost">运费 {{productDetial.productDetial.postage}}</text> 
+        <text class="item-stock">库存  {{productDetial.productDetial.stock}}</text>       
       </view>
       <view class='item-about'>
         <icon type="success_circle" size="16"/>
@@ -28,10 +27,11 @@
   <text class="nav-title">
        商品详情
   </text>
+  <view class="item-intro">{{productDetial.productDetial.intro}}</view>
   <view class="prodect-detail">
     <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
-    <image class="detailPic" src="{{host}}{{item}}" mode="scaleToFill"></image>
-    <view class="line-image" ></view>
+    <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>
+    <!-- <view class="line-image" ></view> -->
     </block>
   </view>
   <view class="prodect_detail_buttom">

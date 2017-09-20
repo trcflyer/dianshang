@@ -48,7 +48,7 @@
   background-color: #fff;
   width: 100%;
   display: flex;
-  font-size: 30rpx;
+  font-size: 32rpx;
   line-height: 50rpx;
   /*水平居中*/
   justify-content: center;
@@ -59,12 +59,11 @@
 .detailPic{
   background-color: #444;
   width:100%;
-  height: 200px;
 }
 .line-image{
  background-color: #444;
     width: 100%;
-    height: 1px;
+    height: 1rpx;
 }
 .prodect_detail_buttom{
   width: 100%;

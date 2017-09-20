@@ -22,6 +22,7 @@ Page({
     pId: '',
     winWidth: 0,
     winHeight: 0,
+    imageHeight:0,
     productDetial:{},
     buyCount: 1,//将要添加到购物车的商品的数量
 
@@ -38,9 +39,11 @@ Page({
     //获取系统信息
     wx.getSystemInfo({
       success: function (res) {
+        var h = res.windowWidth*5/7;
         that.setData({
           winWidth: res.windowWidth,
-          winHeight: res.windowHeight
+          winHeight: res.windowHeight,
+          imageHeight:h,
         });
       }
     });
