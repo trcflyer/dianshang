@@ -7,7 +7,7 @@
     </block>
   </swiper>
   <view class="prodect-desc item-row">
-      <view class="item-title">{{productDetial.productDetial.name}} {{productDetial.productDetial.title}}</view>
+      <view class="item-title">{{productDetial.productDetial.name}}  {{productDetial.productDetial.title}}</view>
       <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
       <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
       <view class='item-about'>
@@ -24,10 +24,10 @@
       </view>
   </view>
   <view class="line" ></view>
-  <text class="nav-title">
+  <view class="nav-title">
        商品详情
-  </text>
-  <view class="item-intro">{{productDetial.productDetial.intro}}</view>
+  </view>
+  <text class="item-intro">{{productDetial.productDetial.intro}}</text>
   <view class="prodect-detail">
     <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
     <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>

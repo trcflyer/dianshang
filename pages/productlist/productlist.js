@@ -9,6 +9,7 @@ Page({
    */
   data: {
     host: '',//主机网址
+    hasList: false,          // 列表是否有数据
     currentTab:'',
     currentPage: 1,
     searchKey: '',//搜索关键字
@@ -22,6 +23,7 @@ Page({
     var that = this;
     this.setData({
       currentTab: options.currentTab,
+      searchKey: options.searchKey||""
     });
   },
   //事件处理函数
@@ -100,6 +102,15 @@ Page({
   onShareAppMessage: function () {
   
   },
+  showLoading: function () {
+    wx.showToast({
+      title: '添加中',
+      icon: 'loading'
+    });
+  },
+  cancelLoading: function () {
+    wx.hideToast();
+  },
   //获取商品数据
   gethttpProductListByCategoryServlet: function () {
     let that = this;
@@ -123,10 +134,12 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        wx.stopPullDownRefresh();
         console.info("[productList][http][productListByCategoryServlet][success]");
         if (res.data.productListByCategoryList.length == 0) {
           that.setData({
             currentPage: that.data.currentPage - 1,
+            hasList: false
           });
           return;
         }
@@ -136,10 +149,45 @@ Page({
         that.setData({
           products: tempProdect,
           host: hostUri,
+          hasList: true
         });
+        that.updateHasHist();
       },
       fail: function ({ errMsg }) {
+        wx.stopPullDownRefresh();
         console.info("[productList][http][productListByCategoryServlet][fail]:" + errMsg);
+      }
+    })
+  },
+  //加入到购物车
+  addShopCar: function (event) {
+    var pId = event.currentTarget.dataset.productId;
+    let that = this;
+    var obj = wx.getStorageSync('user');
+    that.showLoading();
+    wx.request({
+      url: saveCarProductServlet,
+      method: 'POST',
+      data: {
+        'productid': pId,
+        'amount': "1",
+        'userid': obj.openid
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[index][http][saveCarProductServlet][success]" + res);
+        that.cancelLoading();
+        wx.showToast({
+          title: res.data.massage
+        })
+        app.setRefreshShopCar(true);//更新购物车
+      },
+      fail: function ({ errMsg }) {
+        that.cancelLoading();
+        that.hideModal();
+        console.info("[index][http][saveCarProductServlet][fail]:" + errMsg);
       }
     })
   }

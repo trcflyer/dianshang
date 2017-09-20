@@ -16,7 +16,8 @@
     <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">{{categoryList[4].name}}</view>
 </view>  
 <view class="search">
- <input class="input" confirm-type="search" name="userName" placeholder="" bindconfirm="searchInput"/>
+ <input class="input" confirm-type="search" name="userName" placeholder=""
+ value='{{searchKey}}' bindconfirm="searchInput"/>
  <image  src="../../image/search.png"></image>
  </view>
 

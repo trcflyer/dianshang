@@ -1,3 +1,8 @@
 /* productlist.wxss */
 @import '../common/common.wxss';
+.cart-no-data{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}
 

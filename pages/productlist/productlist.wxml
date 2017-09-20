@@ -1,11 +1,17 @@
 <!--productlist.wxml-->
-<block wx:for="{{products}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
-         <view class="item-row" bindtap="prodectTap" data-product-id="{{itemName.id}}">
-    <image src="{{host}}{{itemName.cover}}"></image>
-    <view class="item-title">{{itemName.name}} {{itemName.name}}</view>
-    <view class="item-count">378人购买</view>
-    <text class="price-off">￥:{{itemName.price}}</text>
-    <text class="item-price">￥:{{itemName.baseprice}}</text>
-    <view class="btn-add" bindtap="addShopCar">+</view>
-  </view>
-</block>
+<view wx:if="{{hasList}}">
+  <block wx:for="{{products}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
+    <view class="item-row" bindtap="prodectTap" data-product-id="{{itemName.id}}">
+      <image class='image-left' src="{{host}}{{itemName.cover}}"></image>
+
+      <view class="item-title">{{itemName.name}} {{itemName.name}}</view>
+      <view class="item-count">378人购买</view>
+      <text class="price-off">￥:{{itemName.price}}</text>
+      <text class="item-price">￥:{{itemName.baseprice}}</text>
+      <image class="image-shopadd" data-product-id="{{itemName.id}}" catchtap="addShopCar" src="../../image/addshop.png"></image>
+    </view>
+  </block>
+</view>
+<view wx:else>
+  <view class="cart-no-data">没有搜索到您要的商品哟</view>
+</view>

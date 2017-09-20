@@ -181,13 +181,14 @@ Page({
   //更新修改购物车
   updateShopCar(fromClick,pId, amount) {
     let that = this;
+    var obj = wx.getStorageSync('user');
     wx.request({
       url: saveCarProductServlet,
       method: 'POST',
       data: {
         'productid': pId,
         'amount': amount,
-        'userid': '1'
+        'userid': obj.openid
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',

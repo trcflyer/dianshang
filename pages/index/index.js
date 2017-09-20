@@ -25,7 +25,7 @@ Page({
   prodectTap: function (event) {
     var pId = event.currentTarget.dataset.productId;
     wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId }) 
-
+    
   },
   // 滑动切换tab
   bindChange: function (e) {
@@ -46,7 +46,7 @@ Page({
       // });
       // that.gethttpProductListByCategoryServlet();
       var currentTab = e.target.dataset.current;
-      wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab }) 
+      wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab  }) 
     }
   },
   //上拉加载
@@ -108,12 +108,12 @@ Page({
     this.setData({
       searchKey: e.detail.value
     });
-    this.gethttpProductListByCategoryServlet();
+    wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=0&searchKey=' + this.data.searchKey }) 
   },
 //获取顶部分类栏
   gethttpCategoryListServlet: function(){ 
     let that = this;
-    that.showLoading();
+    //that.showLoading();
     wx.request({
       url: categoryListServlet,
       method: 'POST',
@@ -133,7 +133,7 @@ Page({
   //获取顶部轮播图
   gethttpTopImagesPathListServlet:function(){
     let that = this;
-    that.showLoading();
+    //that.showLoading();
     wx.request({
       url: topImagesPathListServlet,
       method: 'POST',
@@ -175,6 +175,7 @@ Page({
         'Content-Type':'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        wx.stopPullDownRefresh();
         console.info("[index][http][productListByCategoryServlet][success]");
        // that.cancelLoading();
         if (res.data.productListByCategoryList.length == 0){
@@ -192,6 +193,7 @@ Page({
       },
       fail: function ({errMsg}) {
         //that.cancelLoading();
+        wx.stopPullDownRefresh();
         console.info("[index][http][productListByCategoryServlet][fail]:" + errMsg);
       }
     })
@@ -200,6 +202,7 @@ Page({
   addShopCar: function (event) {
     var pId = event.currentTarget.dataset.productId;
     let that = this;
+    var obj = wx.getStorageSync('user');
     that.showLoading();
     wx.request({
       url: saveCarProductServlet,
@@ -207,7 +210,7 @@ Page({
       data: {
         'productid': pId,
         'amount': "1",
-        'userid': '1'
+        'userid': obj.openid
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',

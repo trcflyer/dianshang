@@ -45,13 +45,16 @@
   height: 30rpx;
 }
 .nav-title{
-  background-color: #fff;
+  /* background-color: #fff;
   width: 100%;
-  display: flex;
+   display: flex; 
   font-size: 32rpx;
-  line-height: 50rpx;
-  /*水平居中*/
-  justify-content: center;
+  line-height: 20rpx;
+   justify-content: center;  */
+    width:100%; 
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 60rpx;
 }
 .prodect-detail{
   margin-bottom: 50px;
