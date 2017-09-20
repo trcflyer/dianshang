@@ -7,19 +7,20 @@
 }
 .swiper-tab{
 	width: 100%;
-	border-bottom: 1rpx solid #777777;
+	/* border-bottom: 1rpx solid #777777; */
 	text-align: center;
 	line-height: 28px;
   height: 30px;
   background-color: #444444
   }
-.swiper-tab-list{  font-size: 29rpx;
-    display: inline-block;
+.swiper-tab-list{  font-size: 35rpx;
+   display: inline-block;
 	width: 20.00%;
 	color: #FFFFFF;
 }
 .on{ color: #da7c0c;
-	border-bottom: 1rpx solid #da7c0c;}
+	/* border-bottom: 1rpx solid #da7c0c; */
+  }
 
 .swiper-box{ 
   display: block;

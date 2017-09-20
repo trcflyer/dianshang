@@ -67,7 +67,7 @@ page{
     margin-top: 2px;
     text-decoration:line-through
 }
-.item-row image{
+.item-row .image-left{
   position: absolute;
   left: 10rpx;
   top: 10rpx;
@@ -90,4 +90,11 @@ page{
   background: transparent;
   border:1px solid #cdcdcd;
   border-radius: 50%;
+}
+.item-row .image-shopadd{
+  position: absolute;
+  right: 60rpx;
+  bottom: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
