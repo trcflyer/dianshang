@@ -4,7 +4,7 @@
   autoplay="true" interval="2000" duration="1000">
   <block wx:for="{{imgUrls}}" wx:key="topswiper">
     <swiper-item>
-        <image style="width: {{winWidth}}px;" mode="scaleToFill" src="{{host}}{{item.cover}}"></image>
+        <image style="width: {{winWidth}}px;" mode="scaleToFill" src="{{host}}{{item.cover}}" bindtap="prodectTap" data-product-id="{{item.productid}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -14,6 +14,7 @@
     <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">{{categoryList[2].name}}</view>  
     <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">{{categoryList[3].name}}</view>
     <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">{{categoryList[4].name}}</view>
+    
 </view>  
 <view class="search">
  <input class="input" confirm-type="search" name="userName" placeholder=""

@@ -124,11 +124,12 @@ Page({
   */
   getUserByUserIdServlet: function () {
     let that = this;
+    var obj = wx.getStorageSync('user');
     wx.request({
       url: getUserByUserIdServlet,
       method: 'POST',
       data: {
-        'userid': '1'
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -136,7 +137,7 @@ Page({
       success: function (res) {
         console.info("[address][http][getUserByUserIdServlet][success]");
         that.setData({
-          'address.point': res.data.user.point,
+          'address.point': obj.point,
           'address.name': res.data.user.username,
           'address.phone': res.data.user.phone,
           'address.detail': res.data.user.address

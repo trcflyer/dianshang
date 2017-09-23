@@ -10,7 +10,7 @@ App({
     wx.checkSession({
       success: function () {
         //session 未过期，并且在本生命周期一直有效
-        that.getLogin();
+      that.getLogin();
         console.log("openid未失效");
       },
       fail: function () {
@@ -68,9 +68,8 @@ App({
               'Content-Type': 'application/x-www-form-urlencoded',
             },
             success: function (res) {
-              console.log(res);
               var obj = {};
-              obj.openid = res.data.userOpenId;
+              obj = res.data.user;
               wx.setStorageSync('user', obj);//存储openid    
             }
           });

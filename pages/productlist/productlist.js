@@ -171,7 +171,7 @@ Page({
       data: {
         'productid': pId,
         'amount': "1",
-        'userid': obj.openid
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',

@@ -1,7 +1,7 @@
 /**
  * 小程序网络请求配置文件
  */
-var host = "https://naru.net.cn/ssh_eshop_mysql"
+var host = "https://narutrc.net.cn/ssh_eshop_mysql"
 
 var httpconfig = {
   // host
@@ -22,7 +22,7 @@ var httpconfig = {
   // 产品详情页数据
   productDetailByProductIdService: `${host}/ProductDetailByProductIdServlet.servlet`,
 
-  // 产品详情页数据
+  // 添加购物车
   saveCarProductServlet: `${host}/SaveCarProductServlet.servlet`,
 
   // 获取用户的购物车产品数据

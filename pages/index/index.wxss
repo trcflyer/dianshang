@@ -13,9 +13,9 @@
   height: 30px;
   background-color: #444444
   }
-.swiper-tab-list{  font-size: 35rpx;
+.swiper-tab-list{  font-size: 32rpx;
    display: inline-block;
-	width: 20.00%;
+	width: 19.500%;
 	color: #FFFFFF;
 }
 .on{ color: #da7c0c;

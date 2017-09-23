@@ -143,11 +143,12 @@ Page({
    */
   getCarProductServlet: function () {
     let that = this;
+    var obj = wx.getStorageSync('user');
     wx.request({
       url: getCarProductServlet,
       method: 'POST',
       data: {
-        'userid': '1'
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -188,7 +189,7 @@ Page({
       data: {
         'productid': pId,
         'amount': amount,
-        'userid': obj.openid
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',

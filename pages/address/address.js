@@ -74,11 +74,12 @@ Page({
    */
   updateUserByUserIdServlet: function () {
     let that = this;
+    var obj = wx.getStorageSync('user');
     wx.request({
       url: updateUserInformationServlet,
       method: 'POST',
       data: {
-        'userid': '1',
+        'userid': obj.id,
         'name': that.data.address.name,
         'phone': that.data.address.phone,
         'address': that.data.address.detail

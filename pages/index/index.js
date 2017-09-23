@@ -139,6 +139,7 @@ Page({
       method: 'POST',
       success: function (res) {
         console.info("[index][http][topImagesPathListServlet][success]");
+        console.log(res);
         that.cancelLoading();
           that.setData({
           host:hostUri,
@@ -210,7 +211,7 @@ Page({
       data: {
         'productid': pId,
         'amount': "1",
-        'userid': obj.openid
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
