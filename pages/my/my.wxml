@@ -23,7 +23,7 @@
 
   <view class="myorder-box">
     <view class="myorder-manage">
-      <navigator url="/pages/feedback/feedback">我要吐槽</navigator>
+      <navigator url="/pages/feedback/feedback">意见反馈</navigator>
     </view>
   </view>
     <view class="aboutus-box">

@@ -31,12 +31,12 @@
        商品详情
   </view>
   <text class="item-intro">{{productDetial.productDetial.intro}}</text>
-  <!-- <view class="prodect-detail">
+   <view class="prodect-detail">
     <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
     <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>
     </block>
-  </view> -->
-   <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image>
+  </view> 
+   <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->
 
   <view class="prodect_detail_buttom">
     <view class="prodect_detail_buttom_l"></view>

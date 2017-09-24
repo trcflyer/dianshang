@@ -1,11 +1,13 @@
 // pages/feedback/feedback.js
+var app = getApp()
+const saveFeedBackServlet = require('../../httpconfig').saveFeedBackServlet
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    feedback:'',
   },
 
   /**
@@ -62,5 +64,47 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  bindFeedback(e) {
+    this.setData({
+      feedback: e.detail.value
+    })
+  },
+  formSubmit() {
+    var self = this;
+    if (self.data.feedback) {
+      self.saveFeedBackServlet();
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请填您要反馈的信息',
+        showCancel: false
+      })
+    }
+  },
+  saveFeedBackServlet(){
+    let that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: saveFeedBackServlet,
+      method: 'POST',
+      data: {
+        'userid': obj.id,
+        'feedback': that.data.feedback
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[feedback][http][saveFeedBackServlet][success]");
+        wx.showToast({
+          title: res.data.massage
+        })
+        wx.navigateBack();
+      },
+      fail: function ({ errMsg }) {
+        console.info("[feedback][http][saveFeedBackServlet][fail]:" + errMsg);
+      }
+    })
   }
 })

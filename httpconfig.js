@@ -7,7 +7,7 @@ var httpconfig = {
   // host
   hostUri: `${host}`,
   
-  // 首页顶部swiper
+  // 获取用户openID
   getOpenIdServlet: `${host}/GetOpenIdServlet.servlet`,
 
   // 首页顶部swiper
@@ -39,6 +39,9 @@ var httpconfig = {
 
   //下单
   buyProductServlet: `${host}/BuyProductServlet.servlet`,
+
+  //意见反馈
+  saveFeedBackServlet: `${host}/SaveFeedBackServlet.servlet`,
 };
 
 module.exports = httpconfig
