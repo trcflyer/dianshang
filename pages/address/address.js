@@ -90,6 +90,13 @@ Page({
       success: function (res) {
         console.info("[address][http][updateUserInformationServlet][success]");
         wx.navigateBack();
+        wx.setStorage({
+          key: 'address',
+          data: that.data.address,
+          success() {
+
+          }
+        })
       },
       fail: function ({ errMsg }) {
         console.info("[address][http][updateUserInformationServlet][fail]:" + errMsg);

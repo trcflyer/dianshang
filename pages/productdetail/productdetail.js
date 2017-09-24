@@ -121,6 +121,7 @@ Page({
       },
       success: function (res) {
         console.info("[productdetail][http][productDetailByProductIdService][success]");
+        console.info(res);
         that.cancelLoading();
         that.setData({
           host: hostUri,

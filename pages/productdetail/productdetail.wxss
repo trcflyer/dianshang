@@ -1,6 +1,5 @@
 /* productdetial.wxss */
 @import '../common/common.wxss';
-
 .prodect-desc {
   height: 100%;
   background-color: #fff;

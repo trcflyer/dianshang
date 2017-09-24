@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="containe">
 <swiper indicator-dots="true"
-  autoplay="true" interval="2000" duration="1000">
+  autoplay="true" interval="2000" duration="1000" circular="true" style="height: {{imageHeight}}px;">
   <block wx:for="{{imgUrls}}" wx:key="topswiper">
     <swiper-item>
-        <image style="width: {{winWidth}}px;" mode="scaleToFill" src="{{host}}{{item.cover}}" bindtap="prodectTap" data-product-id="{{item.productid}}"></image>
+        <image style="width: 100%;height: 100%;" mode="scaleToFill" src="{{host}}{{item.cover}}" bindtap="prodectTap" data-product-id="{{item.productid}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -26,7 +26,7 @@
          <view class="item-row" bindtap="prodectTap" data-product-id="{{itemName.id}}">
                 <image class='image-left' src="{{host}}{{itemName.cover}}"></image>
                 <view class="item-title">{{itemName.name}} </view>
-                <view class="item-count">月成交量：389</view>
+                <view class="item-count">月成交量：{{itemName.monthlysales}}</view>
                 <text class="price-off">￥:{{itemName.price}}</text>
                 <text class="item-price">￥:{{itemName.baseprice}}</text>
                 <!-- <view class="btn-add" data-product-id="{{itemName.id}}" catchtap="addShopCar">+</view> -->

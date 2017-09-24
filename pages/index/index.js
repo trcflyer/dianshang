@@ -15,6 +15,8 @@ Page({
     //tab 页面配置
     winWidth: 0,
     winHeight: 0,
+    imageHeight: 0,
+
     // tab切换
     currentTab: '0',
     currentPage:1,
@@ -83,9 +85,11 @@ Page({
     //获取系统信息
     wx.getSystemInfo({
         success: function (res) {
+          var h = res.windowWidth * 5 / 7;
           that.setData({
             winWidth: res.windowWidth,
-            winHeight: res.windowHeight
+            winHeight: res.windowHeight,
+            imageHeight: h,
           });
         }
     });
