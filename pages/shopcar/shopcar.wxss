@@ -44,6 +44,7 @@
     bottom: 20rpx;
     width: 250rpx;
     height: 80rpx;
+    color: #b5b5b5;
 }
 .cart-list .cart-count-box text{
     display: inline-block;
@@ -56,7 +57,9 @@
     height: 100%;
 }
 .cart-count-num{
-    width: 150rpx;
+    padding: 0 28rpx;
+    color: #555;
+    border-bottom: 1px solid #dbdbdb;
 }
 .cart-del{
     position: absolute;
@@ -64,6 +67,7 @@
     bottom: 20rpx;
     width: 80rpx;
     height: 80rpx;
+    color: #b5b5b5;
     line-height: 80rpx;
     text-align: center;
     font-size: 44rpx;

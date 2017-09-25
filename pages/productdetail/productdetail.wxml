@@ -35,7 +35,7 @@
     </block>
   </view>
   <view class="prodect_detail_buttom">
-    <view class="prodect_detail_buttom_l"></view>
+    <view class="prodect_detail_buttom_l">店铺</view>
     <view class="prodect_detail_buttom_r" bindtap="showModal">加入购物车</view>
   </view>
 
