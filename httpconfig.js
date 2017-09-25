@@ -1,7 +1,7 @@
 /**
  * 小程序网络请求配置文件
  */
-var host = "https://narutrc.net.cn/ssh_eshop_mysql"
+var host = "https://naru.net.cn/ssh_eshop_mysql"
 
 var httpconfig = {
   // host
