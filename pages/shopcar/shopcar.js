@@ -199,9 +199,6 @@ Page({
         that.setData({
           buyCount: 1,
         });
-        wx.showToast({
-          title: res.data.massage
-        })
         that.updateCarts(fromClick, pId);
       },
       fail: function ({ errMsg }) {
@@ -232,6 +229,9 @@ Page({
       } else {
         this.getTotalPrice();
       }
+      wx.showToast({
+        title: '删除商品成功'
+      })
     } else if (fromClick == "min") {
       let num = carts[index].amount;
       num = num - 1;

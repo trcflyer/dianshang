@@ -1,27 +1,34 @@
 <view class="main">
-    <view class="header">
-        <image src="{{thumb}}" class="thumb"></image>
-        <text class="nickname">{{nickname}}</text>
-        <text class="points">积分: {{address.point}}</text>
-    </view>
-        <view class="aboutus-box">
-        <view class="aboutus-manage">
-            <navigator url="/pages/aboutus/aboutus">关于我们</navigator>
-        </view>
-    </view>
-    <view class="address-box">
-        <view class="address-manage">
-            <navigator url="/pages/address/address">地址管理</navigator>
-        </view>
-        <view wx:if="{{hasAddress}}" class="address-list">
-            <view>{{address.name}}</view>
-            <view>{{address.phone}}</view>
-            <view>{{address.detail}}</view>
-        </view>
-    </view>
+  <view class="header">
+    <image src="{{thumb}}" class="thumb"></image>
+    <text class="nickname">{{nickname}}</text>
+    <text class="points">积分: {{address.point}}</text>
+  </view>
     <view class="myorder-box">
-        <view class="myorder-manage">
-            <navigator url="/pages/myorder/myorder">我的订单</navigator>
-        </view>
-                </view>
+    <view class="myorder-manage">
+      <navigator url="/pages/myorder/myorder">我的订单</navigator>
+    </view>
+  </view>
+
+  <view class="address-box">
+    <view class="address-manage">
+      <navigator url="/pages/address/address">地址管理</navigator>
+    </view>
+    <view wx:if="{{hasAddress}}" class="address-list">
+      <view>{{address.name}}</view>
+      <view>{{address.phone}}</view>
+      <view>{{address.detail}}</view>
+    </view>
+  </view>
+
+  <view class="myorder-box">
+    <view class="myorder-manage">
+      <navigator url="/pages/feedback/feedback">意见反馈</navigator>
+    </view>
+  </view>
+    <view class="aboutus-box">
+    <view class="aboutus-manage">
+      <navigator url="/pages/aboutus/aboutus">关于我们</navigator>
+    </view>
+  </view>
 </view>

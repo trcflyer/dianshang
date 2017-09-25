@@ -5,7 +5,7 @@
                 <icon wx:if="{{item.selected}}" type="success" color="red" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
                 <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
                 <navigator url="../productdetail/productdetail?pid={{item.product.id}}"><image class="cart-thumb" src="{{host}}{{item.product.cover}}"></image></navigator>
-                <text class="cart-pro-name">{{item.product.title}}</text>
+                <text class="cart-pro-name">{{item.product.name}} \n</text>
                 <text class="cart-pro-price">￥{{item.price}}</text>
                 <view class="cart-count-box">
                     <text class="cart-count-down" bindtap="minusCount" data-index="{{index}}">-</text>

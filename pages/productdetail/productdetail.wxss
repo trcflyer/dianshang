@@ -1,6 +1,5 @@
 /* productdetial.wxss */
 @import '../common/common.wxss';
-
 .prodect-desc {
   height: 100%;
   background-color: #fff;
@@ -43,7 +42,7 @@
 .line{
   background-color: #444;
   width: 100%;
-  height: 30rpx;
+  height: 5rpx;
 }
 .nav-title{
   /* background-color: #fff;

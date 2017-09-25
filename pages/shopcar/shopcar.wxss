@@ -26,16 +26,16 @@
     height: 185rpx;
 }
 .cart-list .cart-pro-name{
-    display: inline-block;
-    width: 300rpx;
-    height: 105rpx;
-    line-height: 50rpx;
-    overflow: hidden;
+  font-size: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+   text-overflow: ellipsis; 
+  line-height: 40rpx;
 }
 .cart-list .cart-pro-price{
-    display: inline-block;
-    float: right;
-    height: 105rpx;
+    font-size:28rpx;
+    font-weight: bold;
+    color:red;
     line-height: 50rpx;
 }
 .cart-list .cart-count-box{
@@ -81,7 +81,7 @@
     line-height: 90rpx;
     padding:0 100rpx 0 80rpx;
     box-sizing: border-box;
-    background: #AB956D;
+    background: #ffa01a;
     color: #fff;
 }
 .total-select{

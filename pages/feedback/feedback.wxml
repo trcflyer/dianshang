@@ -1,0 +1,8 @@
+<view class="main">
+    <view class="form-box">
+        <form bindsubmit="formSubmit">
+            <input value="{{feedback}}" placeholder="请输入您要反馈的信息" bindinput="bindFeedback"/>
+            <button form-type="submit">确定反馈</button>
+        </form>
+    </view>
+</view>

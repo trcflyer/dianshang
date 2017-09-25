@@ -13,6 +13,7 @@
     color: #999;
 }
 .form-box button{
-   margin:20rpx 20rpx 0 0;
+    margin:20rpx 20rpx 0 0;
     font-size: 36rpx;
+
 }

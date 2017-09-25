@@ -17,7 +17,7 @@
 	width: 19.500%;
 	color: #f2f2f3;
 }
-.on{ color: #da7c0c;
+.on{ color: #ffa01a;
 	/* border-bottom: 1rpx solid #da7c0c; */
   }
 
