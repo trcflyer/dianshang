@@ -10,15 +10,6 @@ Page({
    */
   data: {
     host: '',//主机网址
-    topImgUrls: [{
-      url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1794894692,1423685501&fm=117&gp=0.jpg'
-    },
-    {
-      url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089399937,1684001946&fm=26&gp=0.jpg'
-    },
-    {
-      url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=835187673,3615647700&fm=26&gp=0.jpg'
-    }],
     pId: '',
     winWidth: 0,
     winHeight: 0,
