@@ -8,7 +8,7 @@
 .orders{
     height: 90rpx;
     line-height: 90rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
     text-align: center;
 }
 .orders-list{
@@ -21,13 +21,13 @@
 .orders-number{
     height: 90rpx;
     line-height: 90rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
 }
 .orders-detail{
     position: relative;
     height: 120rpx;
     padding: 35rpx 20rpx 35rpx 170rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
 }
 .orders-detail image{
     position: absolute;

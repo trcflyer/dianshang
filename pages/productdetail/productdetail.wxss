@@ -57,15 +57,16 @@
   line-height: 60rpx;
 }
 .item-intro {
-  margin:10px;
-  line-height:20px;
+  padding-left: 20rpx;
+  line-height:25rpx;
 }
 .prodect-detail{
   margin-bottom: 50px;
 }
 .detailPic{
   background-color: #444;
-  width:100%;
+  width: 100%;
+  margin: -2px;
 }
 .line-image{
  background-color: #444;
@@ -192,3 +193,10 @@ text-align: center;
   text-align: center;
   line-height: 35px;
   }
+
+.prodect_d_b_i {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  margin-top: -10rpx;
+}

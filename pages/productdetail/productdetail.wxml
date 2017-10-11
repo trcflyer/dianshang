@@ -39,8 +39,14 @@
    <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->
 
   <view class="prodect_detail_buttom">
-    <view class="prodect_detail_buttom_l">店铺</view>
-    <view class="prodect_detail_buttom_r" bindtap="showModal">加入购物车</view>
+    <view class="prodect_detail_buttom_l">
+      <image class="prodect_d_b_i" src="../../image/shop.svg"></image>
+        店铺
+    </view>
+    <view class="prodect_detail_buttom_r" bindtap="showModal">
+      <image class="prodect_d_b_i" src="../../image/shop-car-o.svg"></image>
+      加入购物车
+    </view>
   </view>
 
 <!--添加购物车弹出框  -->

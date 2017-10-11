@@ -26,7 +26,7 @@
 
 }
 .aboutus-box{
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
     color: #999;
     line-height: 90rpx;
     font-size: 28rpx;
@@ -34,7 +34,7 @@
 .aboutus-box .aboutus-manage{
      position: relative;
     height: 90rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
     text-align: center;
 }
 .aboutus-box .aboutus-manage::after{
@@ -58,7 +58,7 @@
 .address-box .address-manage{
     position: relative;
     height: 90rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
     text-align: center;
 }
 .address-box .address-manage::after{
@@ -78,13 +78,13 @@
 }
 .address-box .address-list view{
     height: 90rpx;
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
 }
 .address-box .address-list view:last-child{
     border-bottom: 0;
 }
 .myorder-box{
-    border-bottom: 1rpx solid #e9e9e9;
+    border-bottom: 1rpx solid #eee;
     color: #999;
     line-height: 90rpx;
     font-size: 28rpx;
@@ -92,7 +92,7 @@
 .myorder-box .myorder-manage{
      position: relative;
     height: 90rpx;
-    border-top: 1rpx solid #e9e9e9;
+    border-top: 1rpx solid #eee;
     text-align: center;
 }
 .myorder-box .myorder-manage::after{
