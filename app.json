@@ -11,6 +11,8 @@
     "pages/feedback/feedback"
   ],
   "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f6ac34",
     "list": [
       {
         "pagePath": "pages/index/index",

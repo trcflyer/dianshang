@@ -27,7 +27,7 @@
 }
 .aboutus-box{
     border-bottom: 1rpx solid #eee;
-    color: #999;
+    color: #666;
     line-height: 90rpx;
     font-size: 28rpx;
 }
@@ -51,7 +51,7 @@
 }
 .address-box{
     border-bottom: 20rpx solid #ededed;
-    color: #999;
+    color: #666;
     line-height: 90rpx;
     font-size: 28rpx;
 }
@@ -85,7 +85,7 @@
 }
 .myorder-box{
     border-bottom: 1rpx solid #eee;
-    color: #999;
+    color: #666;
     line-height: 90rpx;
     font-size: 28rpx;
 }
