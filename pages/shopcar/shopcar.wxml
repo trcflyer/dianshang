@@ -2,17 +2,17 @@
     <view wx:if="{{hasList}}">
         <view class="cart-box">
             <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}">
-                <icon wx:if="{{item.selected}}" type="success" color="red" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
+                <icon wx:if="{{item.selected}}" type="success" color="#f6ac34" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
                 <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
                 <navigator url="../productdetail/productdetail?pid={{item.product.id}}"><image class="cart-thumb" src="{{host}}{{item.product.cover}}"></image></navigator>
                 <text class="cart-pro-name">{{item.product.name}} \n</text>
                 <text class="cart-pro-price">￥{{item.price}}</text>
                 <view class="cart-count-box">
-                    <text class="cart-count-down" bindtap="minusCount" data-index="{{index}}">-</text>
+                    <image class="cart-count-down" bindtap="minusCount" data-index="{{index}}" src="../../image/shopcar_reduce.png"></image>
                     <text class="cart-count-num">{{item.amount}}</text>
-                    <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>
+                    <image class="cart-count-add" bindtap="addCount" data-index="{{index}}"src="../../image/shopcar_add.png"></image>
                 </view>
-                <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text>
+                <image class="cart-del" bindtap="deleteList" data-index="{{index}}"src="../../image/shopcar_delete.png"></image>
             </view>
         </view>
 
