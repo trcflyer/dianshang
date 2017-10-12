@@ -93,7 +93,11 @@ page{
   width: 40rpx;
   height: 40rpx;
 }
-
+.cart-no-data{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}
 image {
   border-radius: 8rpx;
 }
