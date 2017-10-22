@@ -11,7 +11,9 @@
       <image class="image-shopadd" data-product-id="{{itemName.id}}" catchtap="addShopCar" src="../../image/addshop.png"></image>
     </view>
   </block>
+  <view class="cart-no-data">--陛下，臣妾做不到呀 --</view>
 </view>
 <view wx:else>
   <view class="cart-no-data">没有搜索到您要的商品哟</view>
 </view>
+  

@@ -95,8 +95,9 @@ page{
 }
 .cart-no-data{
     padding:40rpx 0;
-    color: #999;
+    color: #777;
     text-align: center;
+     background-color: #fff
 }
 image {
   border-radius: 8rpx;
