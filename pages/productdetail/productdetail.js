@@ -16,7 +16,7 @@ Page({
     imageHeight:0,
     productDetial:{},
     buyCount: 1,//将要添加到购物车的商品的数量
-    coloect : 1,//商品是否已收藏
+    coloect : 0,//商品是否已收藏
   },
 
   /**
@@ -217,6 +217,20 @@ Page({
         that.hideModal();
         console.info("[productdetail][http][saveCarProductServlet][fail]:" + errMsg);
       }
+    })
+  },
+  addToIndex(){
+    wx.reLaunch({
+      url: '/pages/index/index'
+    })
+  },
+  addColoect(){
+    this.setData({
+      coloect: 1,
+    });
+    wx.showToast({
+      title: '收藏成功',
+      duration: 2000
     })
   }
 })

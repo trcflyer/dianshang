@@ -38,11 +38,11 @@
   <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->
 
   <view class="prodect_detail_buttom">
-    <view class="prodect_detail_buttom_l">
+    <view class="prodect_detail_buttom_l" bindtap="addToIndex">
       <image class="prodect_d_b_i" src="../../image/homepage.png"></image>
       <view>首页</view>
     </view>
-    <view class="prodect_detail_buttom_l">
+    <view class="prodect_detail_buttom_l" bindtap="addColoect">
       <view wx:if="{{coloect == 1}}">
         <image class="prodect_d_b_i" src="../../image/coloect_t.png"></image>
       </view>
