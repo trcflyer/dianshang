@@ -16,7 +16,7 @@ Page({
     imageHeight:0,
     productDetial:{},
     buyCount: 1,//将要添加到购物车的商品的数量
-
+    coloect : 1,//商品是否已收藏
   },
 
   /**

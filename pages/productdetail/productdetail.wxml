@@ -1,8 +1,7 @@
-<view >
-  <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000" circular="true"
-   style="height: {{imageHeight}}px;">
+<view>
+  <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000" circular="true" style="height: {{imageHeight}}px;">
     <block wx:for="{{productDetial.detailTopPicList}}" wx:key="*this">
-      <swiper-item  >
+      <swiper-item>
         <image style="width: 100%;height: 100%;" mode="scaleToFill" src="{{host}}{{item}}"></image>
       </swiper-item>
     </block>
@@ -10,41 +9,46 @@
 
 
   <view class="prodect-desc item-row">
-      <view class="item-title">{{productDetial.productDetial.name}}  {{productDetial.productDetial.title}}</view>
-      <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
-      <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
-      <view class='item-about'>
-        <text class="trans-cost">运费 {{productDetial.productDetial.postage}}</text> 
-        <text class="item-stock">库存  {{productDetial.productDetial.stock}}</text>       
-      </view>
-      <view class='item-about'>
-        <icon type="success_circle" size="16"/>
-        <text class="item-ensure">店铺认证</text> 
-        <icon type="success_circle" size="16"/>
-        <text class="item-ensure">线下门店</text> 
-        <icon type="success_circle" size="16"/>        
-        <text class="item-ensure">担保交易</text>                     
-      </view>
+    <view class="item-title">{{productDetial.productDetial.name}} {{productDetial.productDetial.title}}</view>
+    <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
+    <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
+    <view class='item-about'>
+      <text class="trans-cost">运费 {{productDetial.productDetial.postage}}</text>
+      <text class="item-stock">库存  {{productDetial.productDetial.stock}}</text>
+    </view>
+    <view class='item-about'>
+      <icon type="success_circle" size="16" />
+      <text class="item-ensure">店铺认证</text>
+      <icon type="success_circle" size="16" />
+      <text class="item-ensure">线下门店</text>
+      <icon type="success_circle" size="16" />
+      <text class="item-ensure">担保交易</text>
+    </view>
   </view>
   <!-- <view class="line" ></view> -->
   <view class="nav-title">
-       商品详情
+    商品详情
   </view>
   <text class="item-intro">{{productDetial.productDetial.intro}}</text>
-   <view class="prodect-detail">
+  <view class="prodect-detail">
     <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
-    <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>
+      <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>
     </block>
-  </view> 
-   <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->
+  </view>
+  <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->
 
   <view class="prodect_detail_buttom">
     <view class="prodect_detail_buttom_l">
-      <image class="prodect_d_b_i" src="../../image/shop.svg"></image>
+      <image class="prodect_d_b_i" src="../../image/homepage.png"></image>
       <view>首页</view>
     </view>
-     <view class="prodect_detail_buttom_l">
-      <image class="prodect_d_b_i" src="../../image/shop.svg"></image>
+    <view class="prodect_detail_buttom_l">
+      <view wx:if="{{coloect == 1}}">
+        <image class="prodect_d_b_i" src="../../image/coloect_t.png"></image>
+      </view>
+      <view wx:else>
+        <image class="prodect_d_b_i" src="../../image/coloect.png"></image>
+      </view>
       <view>收藏</view>
     </view>
     <view class="prodect_detail_buttom_r" bindtap="showModal">
@@ -53,28 +57,28 @@
     </view>
   </view>
 
-<!--添加购物车弹出框  -->
-<view class="productdetail_shopcar">
-  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
-<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
-<view class="buyTop">
-  <image class="buyTop_image" src="https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=331642910,199523927&fm=202"></image>
-  <view class="buyTop_des">
-    <text  class="buyTop_des_title">{{productDetial.productDetial.name}}  {{productDetial.productDetial.title}}\n</text>
-    <text class="buyTop_des_price">￥:{{productDetial.productDetial.price}}</text>
+  <!--添加购物车弹出框  -->
+  <view class="productdetail_shopcar">
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+      <view class="buyTop">
+        <image class="buyTop_image" src="https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=331642910,199523927&fm=202"></image>
+        <view class="buyTop_des">
+          <text class="buyTop_des_title">{{productDetial.productDetial.name}}  {{productDetial.productDetial.title}}\n</text>
+          <text class="buyTop_des_price">￥:{{productDetial.productDetial.price}}</text>
+        </view>
+        <image class="buyTop_del" bindtap="hideModal" src="../../image/shopcar_del.png"></image>
+      </view>
+      <view class="buyline"></view>
+      <view class="buyNum">
+        <text style="font-size:28rpx; margin-left:10px; ">购买数量</text>
+        <view class="buyNum_right">
+          <text class="buyNum_del" bindtap="buyNumDel">-</text>
+          <text class="add_count">{{buyCount}}</text>
+          <text class="buyNum_del" bindtap="buyNumAdd">+</text>
+        </view>
+      </view>
+      <view class="addShopCar" bindtap="addShopCar">加入购物车</view>
+    </view>
   </view>
-  <image class="buyTop_del" bindtap="hideModal" src="../../image/shopcar_del.png"></image>
-</view>
-<view class="buyline"></view>
-<view class="buyNum">
- <text style="font-size:28rpx; margin-left:10px; ">购买数量</text>
- <view class="buyNum_right">
-  <text class="buyNum_del" bindtap="buyNumDel">-</text>
-  <text class="add_count">{{buyCount}}</text>
-  <text class="buyNum_del" bindtap="buyNumAdd">+</text>
- </view>
-</view>
-<view class="addShopCar" bindtap="addShopCar">加入购物车</view>
-</view>
-</view>
 </view>
