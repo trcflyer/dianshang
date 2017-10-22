@@ -67,7 +67,7 @@
 </view>
 <view class="buyline"></view>
 <view class="buyNum">
- <text style="font-size:22rpx; margin-left:10px; ">购买数量</text>
+ <text style="font-size:28rpx; margin-left:10px; ">购买数量</text>
  <view class="buyNum_right">
   <text class="buyNum_del" bindtap="buyNumDel">-</text>
   <text class="add_count">{{buyCount}}</text>

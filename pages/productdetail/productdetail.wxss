@@ -116,8 +116,11 @@
   box-shadow:0 1px 4px rgba(0, 0, 0, .28);
 }
 .buyTop_des{
-  margin-left:20px;
+  margin-left:10px;
+  margin-right: 40px;
+  margin-top: -20px;
   display:inline-block;
+  position:absolute;
 }
 .buyTop_des_title{
   font-size: 28rpx;
@@ -131,8 +134,8 @@
   position:absolute;
   right:5px;
   top:5px;
-  width:28px;
-  height:28px;
+  width:22px;
+  height:22px;
 }
 .buyline{
   height: 1rpx;
@@ -199,5 +202,5 @@
 .prodect_detail_buttom_l view{
 text-align: center;
   line-height: 20px;
-  font-size: 28rpx;
+  font-size: 22rpx;
 }
