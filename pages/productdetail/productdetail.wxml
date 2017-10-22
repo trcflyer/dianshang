@@ -41,7 +41,11 @@
   <view class="prodect_detail_buttom">
     <view class="prodect_detail_buttom_l">
       <image class="prodect_d_b_i" src="../../image/shop.svg"></image>
-        店铺
+      <view>首页</view>
+    </view>
+     <view class="prodect_detail_buttom_l">
+      <image class="prodect_d_b_i" src="../../image/shop.svg"></image>
+      <view>收藏</view>
     </view>
     <view class="prodect_detail_buttom_r" bindtap="showModal">
       <image class="prodect_d_b_i" src="../../image/shop-car-o.svg"></image>
@@ -56,8 +60,8 @@
 <view class="buyTop">
   <image class="buyTop_image" src="https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=331642910,199523927&fm=202"></image>
   <view class="buyTop_des">
-    <text  class="buyTop_des_title">标题\n</text>
-    <text class="buyTop_des_price">￥5</text>
+    <text  class="buyTop_des_title">{{productDetial.productDetial.name}}  {{productDetial.productDetial.title}}\n</text>
+    <text class="buyTop_des_price">￥:{{productDetial.productDetial.price}}</text>
   </view>
   <image class="buyTop_del" bindtap="hideModal" src="../../image/shopcar_del.png"></image>
 </view>
@@ -67,7 +71,7 @@
  <view class="buyNum_right">
   <text class="buyNum_del" bindtap="buyNumDel">-</text>
   <text class="add_count">{{buyCount}}</text>
-  <text class="buyNum_del" bindtap="buyNumDel">+</text>
+  <text class="buyNum_del" bindtap="buyNumAdd">+</text>
  </view>
 </view>
 <view class="addShopCar" bindtap="addShopCar">加入购物车</view>

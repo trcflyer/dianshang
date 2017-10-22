@@ -74,7 +74,7 @@
 }
 .prodect_detail_buttom{
   width: 100%;
-  height: 40px;
+  height: 45px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -82,25 +82,6 @@
   background: #fff;
   padding-top: 10rpx;
 }
-.prodect_detail_buttom_l{
-  float: left;
-  background-color: gainsboro;
-  width: 30%;
-    height: 40px;
-
-text-align: center;
-  line-height: 40px;
-}
-.prodect_detail_buttom_r{
-  float: right;
-  background-color: red;
-  height: 40px;
-  width: 70%;
-  text-align: center;
-  color: wheat;
-  line-height: 40px;
-}
-
 .commodity_screen {
   width: 100%;
   height: 100%;
@@ -172,7 +153,8 @@ text-align: center;
 }
 .buyNum_del{
   margin:3px;
-  font-size: 40rpx;
+  font-size: 60rpx;
+  color: #444;
 }
 .buyNum_count{
   margin-left:5px;
@@ -190,12 +172,32 @@ text-align: center;
   background-color: red;
   font-size: 30rpx;
   text-align: center;
-  line-height: 35px;
+  line-height: 45px;
   }
-
+.prodect_detail_buttom_l{
+  float: left;
+  background-color: gainsboro;
+  width: 15%;
+   height: 45px;
+  text-align: center;
+}
+.prodect_detail_buttom_r{
+  float: right;
+  background-color: red;
+  height: 45px;
+  width: 70%;
+  text-align: center;
+  color: wheat;
+  line-height: 40px;
+}
 .prodect_d_b_i {
-  width: 60rpx;
-  height: 60rpx;
+  width: 40rpx;
+  height: 40rpx;
   vertical-align: middle;
-  margin-top: -10rpx;
+  margin-top: 15rpx;
+}
+.prodect_detail_buttom_l view{
+text-align: center;
+  line-height: 20px;
+  font-size: 28rpx;
 }
