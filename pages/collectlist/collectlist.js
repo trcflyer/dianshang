@@ -76,7 +76,15 @@ Page({
     wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId })
 
   },
-
+  showLoading: function () {
+    wx.showToast({
+      title: '添加中',
+      icon: 'loading'
+    });
+  },
+  cancelLoading: function () {
+    wx.hideToast();
+  },
   //获取商品数据
   getUserCollectServlet: function () {
     let that = this;
