@@ -2,6 +2,8 @@
 var app = getApp()
 const productDetailByProductIdService = require('../../httpconfig').productDetailByProductIdService
 const saveCarProductServlet = require('../../httpconfig').saveCarProductServlet
+const collectServlet = require('../../httpconfig').collectServlet
+const isCollectServlet = require('../../httpconfig').isCollectServlet
 const hostUri = require('../../httpconfig').hostUri
 Page({
 
@@ -39,6 +41,7 @@ Page({
       }
     });
     that.getProductDetailByProductIdService();
+    that.getColoectState();
   },
 
   /**
@@ -189,13 +192,14 @@ Page({
   addShopCar: function(){
     let that = this;
     that.showLoading();
+    var obj = wx.getStorageSync('user');
     wx.request({
       url: saveCarProductServlet,
       method: 'POST',
       data: {
         'productid': that.data.pId,
         'amount': that.data.buyCount+"",
-        'userid':'1'
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -219,18 +223,68 @@ Page({
       }
     })
   },
+  /**
+   * 返回首页
+   */
   addToIndex(){
     wx.reLaunch({
       url: '/pages/index/index'
     })
   },
+  /**
+   * 修改该商品的收藏状态
+   */
   addColoect(){
-    this.setData({
-      coloect: 1,
-    });
-    wx.showToast({
-      title: '收藏成功',
-      duration: 2000
+    let that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: collectServlet,
+      method: 'POST',
+      data: {
+        'productid': that.data.pId,
+        'userid': obj.id
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[productdetail][http][collectServlet][success]" + res);
+        wx.showToast({
+          title: res.data.massage,
+          duration: 2000
+        })
+        that.getColoectState();
+      },
+      fail: function ({ errMsg }) {
+        console.info("[productdetail][http][collectServlet][fail]:" + errMsg);
+      }
+    })
+  },
+  /**
+  * 获取该商品的收藏状态
+  */
+  getColoectState() {
+    let that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: isCollectServlet,
+      method: 'POST',
+      data: {
+        'productid': that.data.pId,
+        'userid': obj.id
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[productdetail][http][collectServlet][success]" + res);
+        that.setData({
+          coloect: res.data.massage,
+        });
+      },
+      fail: function ({ errMsg }) {
+        console.info("[productdetail][http][collectServlet][fail]:" + errMsg);
+      }
     })
   }
 })

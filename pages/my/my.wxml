@@ -21,11 +21,17 @@
     </view>
   </view>
 
+  <view class="myorder-box">
+    <view class="myorder-manage">
+      <navigator url="/pages/collectlist/collectlist">我的收藏</navigator>
+    </view>
+  </view>
    <view class="address-box">
     <view class="address-manage">
       <navigator url="/pages/pointcenter/pointcenter">积分商城</navigator>
     </view>
   </view>
+
 
   <view class="myorder-box">
     <view class="myorder-manage">

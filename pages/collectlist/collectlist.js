@@ -1,6 +1,6 @@
-// productlist.js
+// pages/collectlist/collectlist.js
 var app = getApp()
-const productListByCategoryServlet = require('../../httpconfig').productListByCategoryServlet
+const getUserCollectServlet = require('../../httpconfig').getUserCollectServlet
 const saveCarProductServlet = require('../../httpconfig').saveCarProductServlet
 const hostUri = require('../../httpconfig').hostUri
 Page({
@@ -11,9 +11,6 @@ Page({
   data: {
     host: '',//主机网址
     hasList: false,          // 列表是否有数据
-    currentTab:'',
-    currentPage: 1,
-    searchKey: '',//搜索关键字
     products: []//商品列表
   },
 
@@ -21,45 +18,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    this.setData({
-      currentTab: options.currentTab,
-      searchKey: options.searchKey||"",
-    });
-  },
-  //事件处理函数
-  prodectTap: function (event) {
-    var pId = event.currentTarget.dataset.productId;
-    wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId })
-
-  },
-  //上拉加载
-  onReachBottom: function () {
-    let that = this;
-    let p = that.data.currentPage;
-    p = p + 1;
-    that.setData({
-      currentPage: p
-    });
-    that.gethttpProductListByCategoryServlet();
+  
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    let that = this;
-    that.setData({
-      currentPage: 1
-    });
-    that.gethttpProductListByCategoryServlet();
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     var that = this;
-    that.gethttpProductListByCategoryServlet();
+    that.getUserCollectServlet();
   },
 
   /**
@@ -103,60 +70,44 @@ Page({
   onShareAppMessage: function () {
   
   },
-  showLoading: function () {
-    wx.showToast({
-      title: '添加中',
-      icon: 'loading'
-    });
+  //事件处理函数
+  prodectTap: function (event) {
+    var pId = event.currentTarget.dataset.productId;
+    wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId })
+
   },
-  cancelLoading: function () {
-    wx.hideToast();
-  },
+
   //获取商品数据
-  gethttpProductListByCategoryServlet: function () {
+  getUserCollectServlet: function () {
     let that = this;
-    let categoryid = that.data.currentTab;
-    let page = that.data.currentPage;
-    var tempProdect = [];
-    if (page != 1) {
-      tempProdect = that.data.products
-    }
-    console.log(that.data.currentPage);
+    var obj = wx.getStorageSync('user');
     wx.request({
-      url: productListByCategoryServlet,
+      url: getUserCollectServlet,
       method: 'POST',
       data: {
-        'categoryid': categoryid,
-        'page': page,
-        'size': 10,
-        'searchKey': that.data.searchKey
+        'userid': obj.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        wx.stopPullDownRefresh();
-        console.info("[productList][http][productListByCategoryServlet][success]");
-        if (res.data.productListByCategoryList.length == 0) {
+        console.info("[collectlist][http][getUserCollectServlet][success]");
+        if (res.data.userCollectPouductList.length == 0) {
           that.setData({
-            currentPage: that.data.currentPage - 1,
             hasList: false
           });
           return;
         }
-        for (var i = 0; i < res.data.productListByCategoryList.length; i++) {
-          tempProdect.push(res.data.productListByCategoryList[i])
-        }
+       
         that.setData({
-          products: tempProdect,
+          products: res.data.userCollectPouductList,
           host: hostUri,
           hasList: true
         });
-        //that.updateHasHist();
+        
       },
       fail: function ({ errMsg }) {
-        wx.stopPullDownRefresh();
-        console.info("[productList][http][productListByCategoryServlet][fail]:" + errMsg);
+        console.info("[collectlist][http][getUserCollectServlet][fail]:" + errMsg);
       }
     })
   },
@@ -178,7 +129,7 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.info("[productList][http][saveCarProductServlet][success]" + res);
+        console.info("[collectlist][http][saveCarProductServlet][success]" + res);
         that.cancelLoading();
         wx.showToast({
           title: res.data.massage
@@ -188,7 +139,7 @@ Page({
       fail: function ({ errMsg }) {
         that.cancelLoading();
         that.hideModal();
-        console.info("[productList][http][saveCarProductServlet][fail]:" + errMsg);
+        console.info("[collectlist][http][saveCarProductServlet][fail]:" + errMsg);
       }
     })
   }

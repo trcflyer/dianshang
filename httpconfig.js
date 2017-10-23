@@ -42,6 +42,15 @@ var httpconfig = {
 
   //意见反馈
   saveFeedBackServlet: `${host}/SaveFeedBackServlet.servlet`,
+
+  //商品收藏和取消收藏
+  collectServlet: `${host}/CollectServlet.servlet`,
+
+  //获取用户某一商品的收藏状态
+  isCollectServlet: `${host}/IsCollectServlet.servlet`,
+
+  //获取用户收藏的商品列表
+  getUserCollectServlet: `${host}/GetUserCollectServlet.servlet`,
 };
 
 module.exports = httpconfig

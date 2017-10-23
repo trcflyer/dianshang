@@ -9,7 +9,8 @@
     "pages/myorder/myorder",
     "pages/productlist/productlist",
     "pages/feedback/feedback",
-    "pages/pointcenter/pointcenter"
+    "pages/pointcenter/pointcenter",
+    "pages/collectlist/collectlist"
   ],
   "tabBar": {
     "color": "#666666",
