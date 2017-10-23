@@ -80,7 +80,6 @@
   left: 0;
   z-index: 2000;
   background: #fff;
-  padding-top: 10rpx;
 }
 .commodity_screen {
   width: 100%;
