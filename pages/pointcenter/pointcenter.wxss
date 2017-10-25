@@ -1,1 +1,42 @@
 /* pages/pointcenter/pointcenter.wxss */
+.contain {
+  background: #555;
+  text-align: center;
+  color: goldenrod;
+}
+.tab {
+
+}
+.tab-left,
+.tab-right {
+  display: inline-block;
+  width: 50%;
+}
+.main {
+
+}
+.img-wrap {
+  display: inline-block;
+  width: calc(50% - 40rpx);
+  margin: 20rpx;
+  background-image: radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+}
+.img-item {
+  width: 80%;
+  border: 2rpx solid gold;
+}
+.item-titel {
+
+}
+.item-price {
+
+}
+.btn-item {
+  height: 60rpx;
+  width: calc(100% - 40rpx);
+  background: gold;
+  border-color: yellow;
+  color: #555;
+  font-size: 16px;
+  line-height: 60rpx;
+}
