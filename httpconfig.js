@@ -51,6 +51,12 @@ var httpconfig = {
 
   //获取用户收藏的商品列表
   getUserCollectServlet: `${host}/GetUserCollectServlet.servlet`,
+
+  //获取积分的商品列表
+  getGiftsServlet: `${host}/GetGiftsServlet.servlet`,
+
+  //积分兑换
+  giftsServlet: `${host}/GiftsServlet.servlet`,
 };
 
 module.exports = httpconfig

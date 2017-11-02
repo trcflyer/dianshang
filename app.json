@@ -10,7 +10,8 @@
     "pages/productlist/productlist",
     "pages/feedback/feedback",
     "pages/pointcenter/pointcenter",
-    "pages/collectlist/collectlist"
+    "pages/collectlist/collectlist",
+    "pages/gopay/gopay"
   ],
   "tabBar": {
     "color": "#666666",

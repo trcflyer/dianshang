@@ -2,32 +2,35 @@
 <view class='contain'>
   <view class='tab'>
     <view class='tab-left'>
-      <view>你的积分</view>
-      <view>600</view>
-    </view>
-    <view class='tab-right'>
-      <view>即将过期积分</view>
-      <view>100</view>
+      <text>你的积分: </text>
+      <text>600</text>
     </view>
   </view>
   <scroll-view scroll-y>
     <view class='main'>
-      <view class='img-wrap'>
-        <image class='img-item'></image>
+      <block wx:for="{{productList}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="gift">
+            <block wx:if="{{idx%2 == 0 }}">
+           
+      <view class='img-wrap'  >
+          <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
+          <view>
+            <view class='item-title'>{{itemName.name}}</view>
+            <view class='item-price'>所需积分:{{itemName.giftpoint}}</view>
+          </view>
+          <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">积分兑换</button>
+    </view>
+     </block>
+     <block wx:if="{{idx%2 == 1 }}">
+      <view class='img-wrap' >
+        <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
         <view>
-          <view class='img-title'>真正好积分,积分享你所有</view>
-          <view class='item-price'>所需积分:600</view>
+          <view class='item-title'>{{itemName.name}}</view>
+          <view class='item-price'>所需积分:{{itemName.giftpoint}}</view>
         </view>
-        <button class='btn-item'>积分兑换</button>
+        <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">积分兑换</button>
       </view>
-      <view class='img-wrap'>
-        <image class='img-item'></image>
-        <view>
-          <view class='item-title'>真正好积分,积分享你所有</view>
-          <view class='item-price'>所需积分:600</view>
-        </view>
-        <button class='btn-item'>积分兑换</button>
-      </view>
+      </block>
+      </block>
     </view>
     
   </scroll-view>
