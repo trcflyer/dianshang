@@ -6,7 +6,6 @@ const hostUri = require('../../httpconfig').hostUri
 Page({
   data: {
     host: '',//主机网址
-    car_ItemsList:{},
     carts:[],               // 购物车列表
     hasList:false,          // 列表是否有数据
     totalPrice:0,           // 总价，初始为0
@@ -124,7 +123,25 @@ Page({
    * 去结算，下单
    */
   shopCarGoPay(){
-
+    var payList = [];
+    for (let i = 0; i < this.data.carts.length; i++) {
+      if (this.data.carts[i].selected == true){
+        payList.push(this.data.carts[i]);
+      }
+    }
+    if (payList.length<=0){
+      wx.showToast({
+        title: '您还没有选择商品'
+      })
+      return;
+    }
+    wx.setStorage({
+      key: 'payList',
+      data: payList,
+      success() {
+        wx.navigateTo({ url: '/pages/gopay/gopay' });
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -157,7 +174,6 @@ Page({
         console.info("[shopcar][http][getCarProductServlet][success]");
         that.setData({
           host: hostUri,
-          car_ItemsList: res.data,
           carts: res.data.car_ItemsList
         });
         let cs = that.data.carts;

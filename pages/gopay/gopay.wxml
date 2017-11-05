@@ -1,2 +1,19 @@
 <!--pages/gopay/gopay.wxml-->
-<text>pages/gopay/gopay.wxml</text>
+<view>
+<view class='cart-top' bindtap='updateAddress'>
+      <image class="cart-thumb" src="../../image/changeAddress.png"></image>
+      <text>{{address}}</text>
+</view>
+  <view class="cart-box">
+    <view class="cart-list" wx:for="{{payList}}" wx:key="{{index}}">
+      <image class="cart-thumb" src="{{host}}{{item.product.cover}}"></image>
+      <text class="cart-pro-name">{{item.product.name}} \n</text>
+      <text class="cart-pro-price">￥{{item.price}}</text>
+      <text class="cart-count-num">*{{item.amount}}</text>
+    </view>
+  </view>
+  <view class="cart-footer">
+    <text class="cart-footer-gopay" bindtap="shopCarGoPay">确定付款</text>
+    <text class="cart-toatl-price">总金额￥:{{totalPrice}}</text>
+  </view>
+</view>
