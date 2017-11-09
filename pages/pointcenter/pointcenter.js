@@ -1,7 +1,6 @@
 // pages/pointcenter/pointcenter.js
 var app = getApp()
 const getGiftsServlet = require('../../httpconfig').getGiftsServlet
-const giftsServlet = require('../../httpconfig').giftsServlet
 const hostUri = require('../../httpconfig').hostUri
 Page({
 
@@ -110,5 +109,17 @@ Page({
   //底部按钮点击事件
   giftButtonTap: function (event) {
     var pId = event.currentTarget.dataset.giftId;
+    var that = this;
+    for (let i = 0; i < this.data.productList.length; i++) {
+      if (that.data.productList[i].id == pId) {
+        wx.setStorage({
+          key: 'giftInfo',
+          data: that.data.productList[i],
+          success() {
+            wx.navigateTo({ url: '/pages/gopoint/gopoint'  });
+          }
+        });
+      }
+    }
   }
 })

@@ -1,0 +1,33 @@
+<!--pages/gopay/gopay.wxml-->
+<view>
+<view class='gopay-top' bindtap='updateAddress'>
+      <image class="gopay-thumb" src="../../image/changeAddress.png"></image>
+      <text>{{address}}</text>
+</view>
+  <view class="gopay-box">
+    <view class="gopay-list">
+      <image class="gopay-thumb" src="{{host}}{{giftInfo.cover}}"></image>
+      <text class="gopay-pro-name">{{giftInfo.name}} \n</text>
+      <text class="gopay-pro-price">{{giftInfo.giftpoint}}积分</text>
+      <text class="gopay-count-num">* 1</text>
+    </view>
+     <view class='gopay-item'>
+     <text class='item-title'>我的积分</text>
+      <text  class='item-right' >{{myPoint}}</text>
+    </view>
+    <view class='gopay-item-notop'>
+     <text class='item-title'>商品积分</text>
+      <text  class='item-right' style='color:red;'>{{giftInfo.giftpoint}}</text>
+    </view>
+   
+    <view class='gopay-item'>
+     <text class='item-title'>配送方式</text>
+      <text  class='item-right'>快递 免运费</text>
+    </view>
+    
+  </view>
+  <view class="gopay-footer">
+    <text class="gopay-footer-gopay" bindtap="GoOk">确定兑换</text>
+    <text class="gopay-toatl-price">总积分:{{giftInfo.giftpoint}}</text>
+  </view>
+</view>

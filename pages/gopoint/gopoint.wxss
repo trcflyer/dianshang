@@ -106,23 +106,22 @@
     border-top: 1rpx solid #e9e9e9;
     border-bottom: 1rpx solid #e9e9e9;
 }
-.gopay-item .item-title{
+.gopay-item-notop{
+    position: relative;
+    padding: 5rpx 5rpx 5rpx 125rpx;
+    height: 60rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+}
+.item-title{
    position: absolute;
     top: 15rpx;
     left: 25rpx;
     font-size: 24rpx;
 }
-.gopay-item .item-right{
+ .item-right{
    position: absolute;
     font-size:28rpx;
     color:#555;
     line-height: 50rpx;
     right: 50rpx;
-}
-.gopay-item input{
-  font-size: 24rpx;
-  overflow: hidden;
-  white-space: nowrap;
-   text-overflow: ellipsis; 
-  line-height: 40rpx;
 }

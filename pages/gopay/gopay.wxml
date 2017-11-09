@@ -1,19 +1,32 @@
 <!--pages/gopay/gopay.wxml-->
 <view>
-<view class='cart-top' bindtap='updateAddress'>
-      <image class="cart-thumb" src="../../image/changeAddress.png"></image>
+<view class='gopay-top' bindtap='updateAddress'>
+      <image class="gopay-thumb" src="../../image/changeAddress.png"></image>
       <text>{{address}}</text>
 </view>
-  <view class="cart-box">
-    <view class="cart-list" wx:for="{{payList}}" wx:key="{{index}}">
-      <image class="cart-thumb" src="{{host}}{{item.product.cover}}"></image>
-      <text class="cart-pro-name">{{item.product.name}} \n</text>
-      <text class="cart-pro-price">￥{{item.price}}</text>
-      <text class="cart-count-num">*{{item.amount}}</text>
+  <view class="gopay-box">
+    <view class="gopay-list" wx:for="{{payList}}" wx:key="{{index}}">
+      <image class="gopay-thumb" src="{{host}}{{item.product.cover}}"></image>
+      <text class="gopay-pro-name">{{item.product.name}} \n</text>
+      <text class="gopay-pro-price">￥{{item.price}}</text>
+      <text class="gopay-count-num">*{{item.amount}}</text>
     </view>
+    <view class='gopay-item'>
+     <text class='item-title'>总金额</text>
+      <text  class='item-right' style='color:red;'>￥:{{totalPrice}}</text>
+    </view>
+    <view class='gopay-item'>
+     <text class='item-title' >留言</text>
+       <input   placeholder="您的留言" />
+    </view>
+    <view class='gopay-item'>
+     <text class='item-title'>配送方式</text>
+      <text  class='item-right'>快递 免运费</text>
+    </view>
+    
   </view>
-  <view class="cart-footer">
-    <text class="cart-footer-gopay" bindtap="shopCarGoPay">确定付款</text>
-    <text class="cart-toatl-price">总金额￥:{{totalPrice}}</text>
+  <view class="gopay-footer">
+    <text class="gopay-footer-gopay" bindtap="GoOk">去付款</text>
+    <text class="gopay-toatl-price">总金额￥:{{totalPrice}}</text>
   </view>
 </view>
