@@ -11,6 +11,8 @@ Page({
     pId:'',
     myPoint:0,//我的总积分
     giftInfo:[],//商品信息
+    address: [],//用户信息
+    
   },
 
   /**
@@ -45,7 +47,7 @@ Page({
       key: 'address',
       success: function (res) {
         self.setData({
-          address: '邮寄地址：' + res.data.detail + '  ' + res.data.name + ' 收\n电话：' + res.data.phone,
+          address: res.data,
           myPoint:res.data.point,
         })
       }
@@ -86,8 +88,11 @@ Page({
   onShareAppMessage: function () {
   
   },
+  updateAddress() {
+    wx.navigateTo({ url: '/pages/address/address' });
+  },
   //积分兑换商品
-  gethttpGiftsServlet: function () {
+  GoOk: function () {
     let that = this;
     var obj = wx.getStorageSync('user');
     wx.request({
@@ -96,6 +101,9 @@ Page({
       data: {
         'userid': obj.id,
         'productid': that.data.giftInfo.id,
+        'name': that.data.address.name,
+        'phone': that.data.address.phone,
+        'address': that.data.address.detail,
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -105,7 +113,12 @@ Page({
         wx.showToast({
           title: res.data.massage
         })
-        wx.navigateBack();
+        if ('兑礼成功' == res.data.massage){
+          that.sleep();
+          wx.navigateBack();
+        }
+        
+       
       },
       fail: function ({ errMsg }) {
        
@@ -113,4 +126,13 @@ Page({
       }
     })
   },
+  sleep: function () {
+    var now = new Date();
+    var exitTime = now.getTime() + 1500;
+    while (true) {
+      now = new Date();
+      if (now.getTime() > exitTime)
+        return;
+    }
+  }
 })

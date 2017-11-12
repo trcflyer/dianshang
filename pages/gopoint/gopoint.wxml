@@ -2,7 +2,7 @@
 <view>
 <view class='gopay-top' bindtap='updateAddress'>
       <image class="gopay-thumb" src="../../image/changeAddress.png"></image>
-      <text>{{address}}</text>
+      <text>邮寄地址：  {{address.detail}}      {{address.name}}   收\n电话：  {{address.phone}}</text>
 </view>
   <view class="gopay-box">
     <view class="gopay-list">
