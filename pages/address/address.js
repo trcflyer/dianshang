@@ -4,6 +4,7 @@ const getUserByUserIdServlet = require('../../httpconfig').getUserByUserIdServle
 const updateUserInformationServlet = require('../../httpconfig').updateUserInformationServlet
 Page({
   data:{
+    pageFrom:'',
     address:{
       point: '',
       name:'',
@@ -11,10 +12,14 @@ Page({
       detail:''
     }
   },
-  onLoad(){
-    var self = this;
-    
-    
+  /**
+  * 生命周期函数--监听页面加载
+  */
+  onLoad: function (options) {
+    var that = this;
+    this.setData({
+      pageFrom: options.from,
+    });
   },
   /**
   * 生命周期函数--监听页面显示
@@ -74,32 +79,43 @@ Page({
    */
   updateUserByUserIdServlet: function () {
     let that = this;
-    var obj = wx.getStorageSync('user');
-    wx.request({
-      url: updateUserInformationServlet,
-      method: 'POST',
-      data: {
-        'userid': obj.id,
-        'name': that.data.address.name,
-        'phone': that.data.address.phone,
-        'address': that.data.address.detail
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      success: function (res) {
-        console.info("[address][http][updateUserInformationServlet][success]");
-        wx.setStorage({
-          key: 'address',
-          data: that.data.address,
-          success() {
-            wx.navigateBack();
-          }
-        })
-      },
-      fail: function ({ errMsg }) {
-        console.info("[address][http][updateUserInformationServlet][fail]:" + errMsg);
-      }
-    })
+    if ('my' != that.data.pageFrom){
+      wx.setStorage({
+        key: 'address',
+        data: that.data.address,
+        success() {
+          wx.navigateBack();
+        }
+      })
+    }else{
+      var obj = wx.getStorageSync('user');
+      wx.request({
+        url: updateUserInformationServlet,
+        method: 'POST',
+        data: {
+          'userid': obj.id,
+          'name': that.data.address.name,
+          'phone': that.data.address.phone,
+          'address': that.data.address.detail
+        },
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        success: function (res) {
+          console.info("[address][http][updateUserInformationServlet][success]");
+          wx.setStorage({
+            key: 'address',
+            data: that.data.address,
+            success() {
+              wx.navigateBack();
+            }
+          })
+        },
+        fail: function ({ errMsg }) {
+          console.info("[address][http][updateUserInformationServlet][fail]:" + errMsg);
+        }
+      })
+    }
+   
   },
 })

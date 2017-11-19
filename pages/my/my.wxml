@@ -12,7 +12,7 @@
 
   <view class="address-box">
     <view class="address-manage">
-      <navigator url="/pages/address/address">地址管理</navigator>
+      <navigator url="/pages/address/address?from=my">地址管理</navigator>
     </view>
     <view wx:if="{{hasAddress}}" class="address-list">
       <view>{{address.name}}</view>

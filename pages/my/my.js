@@ -62,7 +62,6 @@ Page({
         nickname: userInfo.nickName
       })
     });
-    that.getUserByUserIdServlet();
 
   },
 
@@ -70,19 +69,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var self = this;
-    /**
-     * 获取本地缓存 地址信息
-     */
-    wx.getStorage({
-      key: 'address',
-      success: function (res) {
-        self.setData({
-          hasAddress: false,
-          address: res.data
-        })
-      }
-    });
+    var that = this;
+    // /**
+    //  * 获取本地缓存 地址信息
+    //  */
+    // wx.getStorage({
+    //   key: 'address',
+    //   success: function (res) {
+    //     self.setData({
+    //       hasAddress: false,
+    //       address: res.data
+    //     })
+    //   }
+    // });
+    that.getUserByUserIdServlet();
+
   },
 
   /**
