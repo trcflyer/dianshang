@@ -129,5 +129,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  //支付
+  payOrders:function(){
+
+  },
+  //物流详情信息
+  logDetail:function(e){
+    var indent = e.target.dataset.indent;
+    wx.navigateTo({ url: '/pages/logistics/logistics?indent=' + indent  }) 
   }
 })

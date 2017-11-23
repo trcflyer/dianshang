@@ -29,26 +29,26 @@ Page({
     wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId }) 
     
   },
-  // 滑动切换tab
-  bindChange: function (e) {
-    var that = this;
-    that.setData({ currentTab: e.detail.current });
-    that.gethttpProductListByCategoryServlet();
+  // // 滑动切换tab
+  // bindChange: function (e) {
+  //   var that = this;
+  //   that.setData({ currentTab: e.detail.current });
+  //   that.gethttpProductListByCategoryServlet();
 
-  },
+  // },
   //点击tab切换
   swichNav: function (e) {
     let that = this;
-    if (this.data.currentTab === e.target.dataset.current) {
+    if (that.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
-      // that.setData({
-      //   currentTab: e.target.dataset.current,
-      //   currentPage:1,
-      // });
-      // that.gethttpProductListByCategoryServlet();
-      var currentTab = e.target.dataset.current;
-      wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab  }) 
+      that.setData({
+        currentTab:e.target.dataset.current,
+        currentPage:1,
+      });
+      that.gethttpProductListByCategoryServlet();
+      // var currentTab = e.target.dataset.current;
+      // wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab  }) 
     }
   },
   //上拉加载

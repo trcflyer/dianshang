@@ -1,25 +1,26 @@
 <!--myorder.wxml-->
 <view class="orders-box">
-        <!-- <view class="orders">我的订单</view> -->
-        <view class="orders-list" wx:for="{{orders}}" wx:key="index">
-            <view class="orders-number">订单编号：{{item.number}}</view>
-            <view class="orders-detail">
-                <image src="{{item.thumb}}"></image>
-                <view class="">{{item.name}}</view>
-                <view class="">{{item.count}}</view>
-                <text class="orders-status">{{item.status}}</text>
-            </view>
-            <view wx:if="{{item.status == '未支付'}}">
-              <view class="orders-footer">
-                <text>订单金额：￥{{item.money}}</text>
-                    <button size="mini" class="orders-btn" bindtap="payOrders">{{item.btnName}}</button>
-            </view>
-            </view>
-            <view wx:else> 
-               <view class="orders-footer">
-                <text>订单金额：￥{{item.money}}</text>
-            </view>
-
-             </view>
-        </view>
+  <!-- <view class="orders">我的订单</view> -->
+  <view class="orders-list" wx:for="{{orders}}" wx:key="index">
+    <view class="orders-number">订单编号：{{item.number}}</view>
+    <view class="orders-detail">
+      <image src="{{item.thumb}}"></image>
+      <view class="">{{item.name}}</view>
+      <view class="">{{item.count}}</view>
+      <text class="orders-status">{{item.status}}</text>
     </view>
+    <view wx:if="{{item.status == '未支付'}}">
+      <view class="orders-footer">
+        <text>订单金额：￥{{item.money}}</text>
+        <button size="mini" class="orders-btn" bindtap="payOrders">{{item.btnName}}</button>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="orders-footer">
+        <text>订单金额：￥{{item.money}}</text>
+        <button size="mini" class="orders-btn" data-indent="0" bindtap="logDetail">查看物流</button>
+      </view>
+
+    </view>
+  </view>
+</view>

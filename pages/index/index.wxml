@@ -33,5 +33,5 @@
                 <image class="image-shopadd" data-product-id="{{itemName.id}}" catchtap="addShopCar" src="../../image/addshop.png"></image>
             </view>
       </block>
-       <view class="cart-no-data">--别拉了，我也是有底线的--</view>
+       <view class="cart-no-data">--已加载全部数据--</view>
 </view>

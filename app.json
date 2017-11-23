@@ -12,7 +12,8 @@
     "pages/pointcenter/pointcenter",
     "pages/collectlist/collectlist",
     "pages/gopay/gopay",
-    "pages/gopoint/gopoint"
+    "pages/gopoint/gopoint",
+    "pages/logistics/logistics"
   ],
   "tabBar": {
     "color": "#666666",

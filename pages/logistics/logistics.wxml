@@ -1,0 +1,21 @@
+<!--pages/logistics/logistics.wxml-->
+<view class="orders-box">
+  <view class="orders-list" >
+    <view class="orders-number">订单编号：{{order.number}}</view>
+    <view class="orders-detail">
+      <image src="{{order.thumb}}"></image>
+      <view class="">{{order.name}}</view>
+      <view class="">{{order.count}}</view>
+      <text class="orders-status">{{order.status}}</text>
+    </view>
+  </view>
+  <view class='log-box' wx:for="{{logisticsList}}" wx:key="index">
+    <view class="log-list">
+        <view class="log-detail">
+      <view class='log-left'>左</view>
+      <view class='log-middle'>中</view>
+      <view class='log-right'>右</view>
+          </view >
+    </view>
+  </view>
+</view>
