@@ -8,7 +8,6 @@
 .swiper-tab{
 	width: 100%;
 	text-align: center;
-	line-height: 71rpx;
   background-color: #444444
   }
 .swiper-tab-list{  
@@ -16,10 +15,21 @@
   display: inline-block;
 	width: 19.500%;
 	color: #f2f2f3;
+  margin: 6rpx 0;
 }
-.on{ color: #ffa01a;
-	/* border-bottom: 1rpx solid #da7c0c; */
+.on{ 
+  color: #ffa01a;
+  border-bottom: 1px solid #ffa01a;
+  border-right: 1px solid #ffa01a;
   }
+.on::before {
+  content: "";
+  position: absolute;
+  bottom: 4rpx;
+  width: 100%;
+  height: 2rpx;
+  background: #ffa01a;
+}
 
 .swiper-box{ 
   display: block;

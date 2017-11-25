@@ -40,15 +40,14 @@
 }
 .cart-list .cart-count-box{
     position: absolute;
-    left: 285;
-    bottom: 20rpx;
+    bottom: 10rpx;
     width: 250rpx;
     height: 80rpx;
     color: #b5b5b5;
 }
 .cart-list .cart-count-box text{
     display: inline-block;
-    line-height: 80rpx;
+    line-height: 60rpx;
     text-align: center;
 }
 .cart-count-down,.cart-count-add{
@@ -62,18 +61,19 @@
     padding: 0 28rpx;
     color: #555;
     border-bottom: 1px solid #dbdbdb;
-    margin-bottom: 15rpx;
+    margin: 15rpx;
 }
 .cart-del{
     position: absolute;
-    right: 50rpx;
-    bottom: 40rpx;
-    width: 50rpx;
-    height: 50rpx;
-    color: #b5b5b5;
-    line-height: 80rpx;
-    text-align: center;
-    font-size: 44rpx;
+    right:30rpx;
+    top:20rpx;
+    width:50rpx;
+    height:50rpx;
+    color:#b5b5b5;
+    line-height:80rpx;
+    text-align:center;
+    font-size:44rpx;
+    opacity:.6;
 }
 .cart-footer{
     position: fixed;

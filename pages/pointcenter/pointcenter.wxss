@@ -14,7 +14,7 @@
   border-bottom: 1rpx solid #f6ac34;
 }
 .main {
-
+  background: #4a1b16 url(../../image/bg.png) repeat;
 }
 .img-wrap {
   display: inline-block;
@@ -23,9 +23,11 @@
   background-image: radial-gradient(60% 55%, farthest-side,blue,green,#f6ac34,black);
 }
 .img-item {
-  width: 80%;
-  height: 300rpx;
+  width: 280rpx;
+  height: 280rpx;
+  padding: 20rpx;
   border: 1rpx solid #f6ac34;
+  background:rgba(0, 0, 0, .4);
 }
 .item-title {
   font-size: 28rpx;
