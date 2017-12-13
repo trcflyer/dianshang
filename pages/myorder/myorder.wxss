@@ -5,12 +5,7 @@
     color: #999;
     font-size: 28rpx;
 }
-.orders{
-    height: 90rpx;
-    line-height: 90rpx;
-    border-bottom: 1rpx solid #eee;
-    text-align: center;
-}
+
 .orders-list{
     padding-left: 30rpx;
     border-bottom: 20rpx solid #ededed;
@@ -22,19 +17,23 @@
     height: 90rpx;
     line-height: 90rpx;
     border-bottom: 1rpx solid #eee;
+    color: #ffa01a;
 }
 .orders-detail{
     position: relative;
     height: 120rpx;
-    padding: 35rpx 20rpx 35rpx 170rpx;
+    padding: 25rpx 5rpx 5rpx 130rpx;
     border-bottom: 1rpx solid #eee;
+}
+.orders-detail .detail-text{
+   color: #555;
 }
 .orders-detail image{
     position: absolute;
     left: 0;
-    top: 20rpx;
-    width: 150rpx;
-    height: 150rpx;
+    top: 10rpx;
+    width: 120rpx;
+    height: 120rpx;
 }
 .orders-detail view{
     line-height: 60rpx;
@@ -42,16 +41,16 @@
 .orders-detail .orders-status{
     position: absolute;
     right: 20rpx;
-    top: 35rpx;
-    height: 120rpx;
-    line-height: 120rpx;
+    top: 15rpx;
+    height: 100rpx;
+    line-height: 100rpx;
     color: #b42f2d;
 }
 .orders-footer{
-    height: 60rpx;
-    line-height: 60rpx;
+    height: 50rpx;
+    line-height: 50rpx;
     color: #2f2f2f;
-    padding:15rpx 30rpx 15rpx 0;
+    padding:15rpx 10rpx 15rpx 0;
 }
 .orders-footer .orders-btn{
     float: right;

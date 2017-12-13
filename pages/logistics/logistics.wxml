@@ -12,9 +12,12 @@
   <view class='log-box' wx:for="{{logisticsList}}" wx:key="index">
     <view class="log-list">
         <view class="log-detail">
-      <view class='log-left'>左</view>
+      <view class='log-left'>
+      <text style='font-size:28rpx;'>12-02</text>
+      <text style='font-size:18rpx; '>\n 12:58</text>
+      </view>
       <view class='log-middle'>中</view>
-      <view class='log-right'>右</view>
+      <view class='log-right'>上海浦东新区张江中转站</view>
           </view >
     </view>
   </view>

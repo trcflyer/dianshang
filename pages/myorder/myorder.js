@@ -1,85 +1,21 @@
 // myorder.js
+const getIndentHistoryServlet = require('../../httpconfig').getIndentHistoryServlet
+const hostUri = require('../../httpconfig').hostUri
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orders: [{
-      number: 111,
-      name: "华为P9手机",
-      count: 23,
-      status: '未支付',
-      money: 67.99,
-      btnName: "去付款",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-    },
-    {
-      number: 111,
-      name: "华为荣耀手机",
-      count: 23,
-      status: '未支付',
-      money: 67.99,
-      btnName:"去付款",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-    },
-    {
-      number: 111,
-      name: "OPPO R11",
-      count: 23,
-      status: '已支付',
-      money: 67.99,
-      btnName: "看进度",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-
-    },
-    {
-      number: 111,
-      name: "小米Max玫瑰金",
-      count: 23,
-      status: '已支付',
-      money: 67.99,
-      btnName: "去评价",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-
-    },
-    {
-      number: 111,
-      name: "大姐夫颗粒剂",
-      count: 23,
-      status: '已支付',
-      money: 67.99,
-      btnName: "去评价",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-
-    },
-    {
-      number: 111,
-      name: "吗，吗，被写成vflk",
-      count: 23,
-      status: '已支付',
-      money: 67.99,
-      btnName: "去评价",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-
-    },
-    {
-      number: 111,
-      name: "复健科都是废话",
-      count: 23,
-      status: '已支付',
-      money: 67.99,
-      btnName: "去评价",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-
-    }],
+    orders: [],
+    host: '',//主机网址
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getIndentHistoryInfo();
   },
 
   /**
@@ -129,6 +65,38 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  //获取订单列表信息
+  getIndentHistoryInfo : function(){
+    let that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: getIndentHistoryServlet,
+      method: 'POST',
+      data: {
+        'userid': obj.id
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info(res.data);
+        console.info("[myorder][http][getIndentHistoryServlet][success]");
+        that.setData({
+          orders: res.data.indentHistoryList,
+          host: hostUri,
+        });
+      },
+      fail: function ({ errMsg }) {
+        console.info("[myorder][http][getIndentHistoryServlet][fail]:" + errMsg);
+      }
+    })
+  },
+  //事件处理函数
+  prodectTap: function (event) {
+    var pId = event.currentTarget.dataset.productId;
+    wx.navigateTo({ url: '/pages/productdetail/productdetail?pid=' + pId })
+
   },
   //支付
   payOrders:function(){

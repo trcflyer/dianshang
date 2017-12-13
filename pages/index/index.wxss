@@ -20,7 +20,6 @@
 .on{ 
   color: #ffa01a;
   border-bottom: 1px solid #ffa01a;
-  border-right: 1px solid #ffa01a;
   }
 .on::before {
   content: "";

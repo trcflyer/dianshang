@@ -1,26 +1,38 @@
 <!--myorder.wxml-->
 <view class="orders-box">
   <!-- <view class="orders">我的订单</view> -->
-  <view class="orders-list" wx:for="{{orders}}" wx:key="index">
-    <view class="orders-number">订单编号：{{item.number}}</view>
-    <view class="orders-detail">
-      <image src="{{item.thumb}}"></image>
-      <view class="">{{item.name}}</view>
-      <view class="">{{item.count}}</view>
-      <text class="orders-status">{{item.status}}</text>
+  <view class="orders-list" wx:for="{{orders}}" wx:key="item"  wx:for-index="idx"  wx:for-item="item">
+    <view class="orders-number">订单编号：{{item.id}}
+      <!-- <text class="orders-status" wx:if="{{item.status == '1'}}">待发货</text>
+      <text class="orders-status" wx:if="{{item.status == '2'}}">待收货</text>
+      <text class="orders-status" wx:if="{{item.status == '3'}}">已签收</text>
+      <text class="orders-status" wx:if="{{item.status == '4'}}">问题订单</text>
+      <text class="orders-status" wx:if="{{item.status == '5'}}">退款订单</text> -->
     </view>
-    <view wx:if="{{item.status == '未支付'}}">
+    <block wx:for="{{item.itemList}}" wx:key="index" wx:for-index="id"  wx:for-item="index">
+      <view class="orders-detail">
+        <image src="{{host}}{{index.product.cover}}" mode="scaleToFill" bindtap="prodectTap" data-product-id="{{index.product.id}}"></image>
+        <view class="detail-text">{{index.product.name}}</view>
+        <view class="detail-text">数量:{{index.amount}}</view>
+      </view>
+    </block>
+
+    <!--兑礼订单  -->
+    <!--1 待发货，2已发货，3完成，4问题件，5退款  -->
+    <view wx:if="{{item.isgift == '1'}}">
       <view class="orders-footer">
-        <text>订单金额：￥{{item.money}}</text>
-        <button size="mini" class="orders-btn" bindtap="payOrders">{{item.btnName}}</button>
+        <text>所用积分：{{item.total}}</text>
+        <button wx:if="{{item.status == '2'}}" size="mini" class="orders-btn" data-indent='{{item.carrieno}}' bindtap="logDetail">查看物流</button>
+        <button wx:if="{{item.status == '3'}}" size="mini" class="orders-btn" data-indent='{{item.carrieno}}' bindtap="logDetail">查看物流</button>
       </view>
     </view>
+    <!--普通订单  -->
     <view wx:else>
       <view class="orders-footer">
-        <text>订单金额：￥{{item.money}}</text>
-        <button size="mini" class="orders-btn" data-indent="0" bindtap="logDetail">查看物流</button>
+        <text>订单金额：￥{{item.total}}</text>
+        <button wx:if="{{item.status == '2'}}" size="mini" class="orders-btn" data-indent='{{item.carrieno}}' bindtap="logDetail">查看物流</button>
+        <button wx:if="{{item.status == '3'}}" size="mini" class="orders-btn" data-indent='{{item.carrieno}}' bindtap="logDetail">查看物流</button>
       </view>
-
     </view>
   </view>
 </view>

@@ -48,25 +48,25 @@
 }
 .log-detail{
     position: relative;
-    height: 120rpx;
-    padding: 35rpx 20rpx 35rpx 170rpx;
-    border-bottom: 1rpx solid #eee;
+    padding: 35rpx 20rpx 35rpx 70rpx;
+    height: 50rpx;
+    align-content: center;
 }
 .log-detail .log-left{
     position: absolute;
     left: 0;
-    top: 20rpx;
-    width: 150rpx;
-    height: 150rpx;
+    top: 10rpx;
+    width: 30%;
 }
 .log-detail .log-middle{
-    line-height: 60rpx;
+    position: absolute;
+    left: 100rpx;
+    top: 10rpx;
+    width: 5%;
 }
 .log-detail .log-right{
     position: absolute;
-    right: 20rpx;
-    top: 35rpx;
-    height: 120rpx;
-    line-height: 120rpx;
-    color: #b42f2d;
-}
+    right: 0;
+    top: 10rpx;
+    width: 65%;
+    }
