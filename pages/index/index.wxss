@@ -3,7 +3,6 @@
 
 .containe{
   background-color: #444444
-
 }
 .swiper-tab{
 	width: 100%;

@@ -14,9 +14,16 @@
     border-bottom: 0;
 }
 .orders-number{
-    height: 90rpx;
-    line-height: 90rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     border-bottom: 1rpx solid #eee;
+    color: #ffa01a;
+}
+.orders-status{
+    position: absolute;
+    right: 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     color: #ffa01a;
 }
 .orders-detail{
@@ -38,14 +45,7 @@
 .orders-detail view{
     line-height: 60rpx;
 }
-.orders-detail .orders-status{
-    position: absolute;
-    right: 20rpx;
-    top: 15rpx;
-    height: 100rpx;
-    line-height: 100rpx;
-    color: #b42f2d;
-}
+
 .orders-footer{
     height: 50rpx;
     line-height: 50rpx;
@@ -58,6 +58,7 @@
     height: 60rpx;
     line-height:60rpx;
     border-radius: 6rpx;
-    background: #b42f2d;
-    color: #fff;
+    background: #fff;
+    border:1rpx solid #ffa01a;
+    color: #ffa01a;
 }

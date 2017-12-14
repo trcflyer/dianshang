@@ -1,4 +1,6 @@
 // pages/logistics/logistics.js
+const getCarrieInfoServlet = require('../../httpconfig').getCarrieInfoServlet
+const hostUri = require('../../httpconfig').hostUri
 Page({
 
   /**
@@ -14,6 +16,7 @@ Page({
       btnName: "去付款",
       thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
     },
+    indentid:'',//物流订单id
       logisticsList:[{},{},{}],
   },
 
@@ -21,7 +24,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    this.setData({
+      indentid: options.indent,
+    });
   },
 
   /**
@@ -35,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getHttpCarrieInfoServlet();
   },
 
   /**
@@ -71,5 +77,30 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  //获取物流
+  getHttpCarrieInfoServlet: function () {
+    let that = this;
+    console.info(that.data.indentid);
+    wx.request({
+      url: getCarrieInfoServlet,
+      method: 'POST',
+      data: {
+        'indentid': that.data.indentid
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info(res.data);
+        console.info("[logistics][http][getHttpCarrieInfoServlet][success]");
+        that.setData({
+          host: hostUri,
+        });
+      },
+      fail: function ({ errMsg }) {
+        console.info("[logistics][http][getHttpCarrieInfoServlet][fail]:" + errMsg);
+      }
+    })
   }
 })

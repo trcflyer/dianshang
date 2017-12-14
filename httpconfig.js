@@ -57,6 +57,9 @@ var httpconfig = {
 
   //积分兑换
   giftsServlet: `${host}/GiftsServlet.servlet`,
+
+  //物流信息
+  getCarrieInfoServlet: `${host}/GetCarrieInfoServlet.servlet`,
 };
 
 module.exports = httpconfig
