@@ -10,7 +10,7 @@
   background-color: #444444
   }
 .swiper-tab-list{  
-  font-size: 28rpx;
+  font-size: 32rpx;
   display: inline-block;
 	width: 19.500%;
 	color: #f2f2f3;

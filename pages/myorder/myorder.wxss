@@ -59,6 +59,10 @@
     line-height:60rpx;
     border-radius: 6rpx;
     background: #fff;
-    border:1rpx solid #ffa01a;
+    
     color: #ffa01a;
+}
+/* 修改边框颜色 */
+.orders-footer .orders-btn::after{  
+  border:1px solid #ffa01a;  
 }

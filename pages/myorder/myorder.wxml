@@ -2,7 +2,7 @@
 <view class="orders-box">
   <!-- <view class="orders">我的订单</view> -->
   <view class="orders-list" wx:for="{{orders}}" wx:key="item"  wx:for-index="idx"  wx:for-item="item">
-    <view class="orders-number">订单编号：{{item.id}}
+    <view class="orders-number">订单编号：{{item.orderid}}
        <text class="orders-status" wx:if="{{item.status == '1'}}">已发货</text>
       <text class="orders-status" wx:if="{{item.status == '2'}}">待收货</text>
       <text class="orders-status" style='color: #0b0;' wx:if="{{item.status == '3'}}">已签收</text>
