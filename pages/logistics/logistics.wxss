@@ -1,46 +1,8 @@
 /* pages/logistics/logistics.wxss */
 @import '../common/common.wxss';
-.orders-box{
-    color: #999;
-    font-size: 28rpx;
-}
-.orders-list{
-    padding-left: 30rpx;
-    border-bottom: 20rpx solid #ededed;
-}
-.orders-number{
-    height: 90rpx;
-    line-height: 90rpx;
-    border-bottom: 1rpx solid #eee;
-}
-.orders-detail{
-    position: relative;
-    height: 120rpx;
-    padding: 35rpx 20rpx 35rpx 170rpx;
-    border-bottom: 1rpx solid #eee;
-}
-.orders-detail image{
-    position: absolute;
-    left: 0;
-    top: 20rpx;
-    width: 150rpx;
-    height: 150rpx;
-}
-.orders-detail view{
-    line-height: 60rpx;
-}
-.orders-detail .orders-status{
-    position: absolute;
-    right: 20rpx;
-    top: 35rpx;
-    height: 120rpx;
-    line-height: 120rpx;
-    color: #b42f2d;
-}
-
 
 .log-box{
-    color: #999;
+    color: #666;
     font-size: 28rpx;
 }
 .log-list{
@@ -57,10 +19,11 @@
     left: 0;
     top: 10rpx;
     width: 30%;
+  text-align: left;
 }
 .log-detail .log-middle{
     position: absolute;
-    left: 100rpx;
+    left: 25%;
     top: 10rpx;
     width: 5%;
 }

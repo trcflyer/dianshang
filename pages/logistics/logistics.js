@@ -7,17 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order: {
-      number: 111,
-      name: "华为P9手机",
-      count: 23,
-      status: '未支付',
-      money: 67.99,
-      btnName: "去付款",
-      thumb: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1409687278,979007170&fm=26&gp=0.jpg'
-    },
     indentid:'',//物流订单id
-      logisticsList:[{},{},{}],
+    carrieInfo:{},
   },
 
   /**
@@ -92,10 +83,14 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.info(res.data);
         console.info("[logistics][http][getHttpCarrieInfoServlet][success]");
+        for (let i = 0; i < res.data.carrieinfo.Traces.length; i++) {
+          var temp = res.data.carrieinfo.Traces[i].AcceptTime.split(" ");
+          res.data.carrieinfo.Traces[i].date = temp[0];
+          res.data.carrieinfo.Traces[i].time = temp[1];
+        }
         that.setData({
-          host: hostUri,
+          carrieInfo: res.data.carrieinfo,
         });
       },
       fail: function ({ errMsg }) {
