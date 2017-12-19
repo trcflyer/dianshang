@@ -66,3 +66,8 @@
 .orders-footer .orders-btn::after{  
   border:1px solid #ffa01a;  
 }
+.order-no-data{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}

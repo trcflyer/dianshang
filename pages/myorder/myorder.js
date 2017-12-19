@@ -8,6 +8,7 @@ Page({
    */
   data: {
     orders: [],
+    hasList: false,          // 列表是否有数据
     host: '',//主机网址
   },
 
@@ -80,7 +81,15 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
-        console.info(res.data);
+        if (res.data.indentHistoryList.length > 0) {
+          that.setData({
+            hasList: true,
+          });
+        }else{
+          that.setData({
+            hasList: false,
+          });
+        }
         console.info("[myorder][http][getIndentHistoryServlet][success]");
         that.setData({
           orders: res.data.indentHistoryList,

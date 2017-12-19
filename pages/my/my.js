@@ -141,7 +141,8 @@ Page({
           'address.point': obj.point,
           'address.name': res.data.user.username,
           'address.phone': res.data.user.phone,
-          'address.detail': res.data.user.address
+          'address.detail': res.data.user.address,
+          'address.userid': obj.id
         });
         wx.setStorage({
           key: 'address',

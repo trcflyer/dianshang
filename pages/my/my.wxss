@@ -19,11 +19,15 @@
     height: 100rpx;
     border-radius: 50%;
 }
-.header .points{
+.header .userid{
     position: absolute;
     top: 110rpx;
     left: 40rpx;
-
+}
+.header .points{
+    position: absolute;
+    top: 110rpx;
+    right: 150rpx;
 }
 .aboutus-box{
     border-bottom: 1rpx solid #eee;
