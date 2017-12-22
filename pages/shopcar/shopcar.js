@@ -18,6 +18,9 @@ Page({
     var that = this;
     let flag = app.globalData.refreshShopCar;
     console.log(flag);
+    this.setData({                                // 最后赋值到data中渲染到页面
+      totalPrice: 0
+    });
     if(flag){
       that.getCarProductServlet();
       app.setRefreshShopCar(false);

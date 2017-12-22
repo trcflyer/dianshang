@@ -1,6 +1,7 @@
 // pages/gopay/gopay.js
+var app = getApp()
 const hostUri = require('../../httpconfig').hostUri
-
+const buyProductServlet = require('../../httpconfig').buyProductServlet
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
     host: '',//主机网址
     totalPrice: 0,           // 总价，初始为0
     address:'',//寄送地址
-    payList:[]
+    payList:[],
+    productIdList:[]
   },
 
   /**
@@ -93,11 +95,14 @@ Page({
   getTotalPrice() {
     let carts = this.data.payList;                  // 获取购物车列表
     let total = 0;
+    let list = [];
     for (let i = 0; i < carts.length; i++) {         // 循环列表得到每个数据
         total += carts[i].amount * carts[i].price;   // 所有价格加起来
+        list.push(carts[i].product.id);
     }
     this.setData({                                // 最后赋值到data中渲染到页面
-      totalPrice: total.toFixed(2)
+      totalPrice: total.toFixed(2),
+      productIdList: list
     });
   },
   /**
@@ -106,7 +111,47 @@ Page({
   updateAddress(){
     wx.navigateTo({ url: '/pages/address/address' });
   },
+  //去下单
   GoOk(){
-    
+    var that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: buyProductServlet,
+      method: 'POST',
+      data: {
+        'userid': obj.id,
+        'name': that.data.address.name,
+        'phone': that.data.address.phone,
+        'address': that.data.address.detail,
+        'productIdList': that.data.productIdList
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[gopay][http][buyProductServlet][success]");
+        app.setRefreshShopCar(true);//更新购物车
+        wx.requestPayment({
+          'timeStamp': res.data.paymentDate.timeStamp,
+          'nonceStr': res.data.paymentDate.nonceStr,
+          'package': res.data.paymentDate.package,
+          'signType': res.data.paymentDate.signType,
+          'paySign': res.data.paymentDate.paySign,
+          'success': function (res) {
+            console.info('支付成功');
+          },
+          'fail': function (res) {
+            console.info('支付失败');
+            console.info(res);
+          },
+          'complete': function (res) {
+            wx.navigateTo({ url: '/pages/index/index' }) 
+          }
+        })
+      },
+      fail: function ({ errMsg }) {
+        console.info("[gopay][http][buyProductServlet][fail]:" + errMsg);
+      }
+    })
   }
 })
