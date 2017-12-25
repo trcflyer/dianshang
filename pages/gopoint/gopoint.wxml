@@ -20,6 +20,11 @@
       <text  class='item-right' style='color:red;'>{{giftInfo.giftpoint}}</text>
     </view>
    
+     <view class='gopay-item'>
+     <text class='item-title' >留言</text>
+       <input   placeholder="您的留言" bindinput='remarkInput'/>
+    </view>
+
     <view class='gopay-item'>
      <text class='item-title'>配送方式</text>
       <text  class='item-right'>快递 免运费</text>

@@ -40,6 +40,9 @@ var httpconfig = {
   //下单
   buyProductServlet: `${host}/BuyProductServlet.servlet`,
 
+  //我的订单界面继续支付
+  buyIndentServlet: `${host}/BuyIndentServlet.servlet`,
+
   //意见反馈
   saveFeedBackServlet: `${host}/SaveFeedBackServlet.servlet`,
 

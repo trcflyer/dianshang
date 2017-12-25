@@ -11,8 +11,10 @@ Page({
     host: '',//主机网址
     totalPrice: 0,           // 总价，初始为0
     address:'',//寄送地址
+    addressshow: '',//寄送地址
     payList:[],
-    productIdList:[]
+    productIdList:[],
+    remark:''//备注信息
   },
 
   /**
@@ -49,7 +51,8 @@ Page({
       key: 'address',
       success: function (res) {
         self.setData({
-          address: '邮寄地址：' + res.data.detail + '  ' + res.data.name + ' 收\n电话：' + res.data.phone,
+          address: res.data,
+          addressshow: '邮寄地址：' + res.data.detail + '  ' + res.data.name + ' 收\n电话：' + res.data.phone,
         })
       }
     });
@@ -111,6 +114,11 @@ Page({
   updateAddress(){
     wx.navigateTo({ url: '/pages/address/address' });
   },
+  remarkInput(e){
+    this.setData({
+      remark: e.detail.value
+    });
+  },
   //去下单
   GoOk(){
     var that = this;
@@ -123,7 +131,8 @@ Page({
         'name': that.data.address.name,
         'phone': that.data.address.phone,
         'address': that.data.address.detail,
-        'productIdList': that.data.productIdList
+        'productIdList': that.data.productIdList,
+        'memo': that.data.remark
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -131,6 +140,7 @@ Page({
       success: function (res) {
         console.info("[gopay][http][buyProductServlet][success]");
         app.setRefreshShopCar(true);//更新购物车
+        console.info(res.data);
         wx.requestPayment({
           'timeStamp': res.data.paymentDate.timeStamp,
           'nonceStr': res.data.paymentDate.nonceStr,
@@ -139,13 +149,12 @@ Page({
           'paySign': res.data.paymentDate.paySign,
           'success': function (res) {
             console.info('支付成功');
+            wx.navigateTo({ url: '/pages/index/index' });
           },
           'fail': function (res) {
             console.info('支付失败');
             console.info(res);
-          },
-          'complete': function (res) {
-            wx.navigateTo({ url: '/pages/index/index' }) 
+            wx.navigateTo({ url: '/pages/index/index' });
           }
         })
       },

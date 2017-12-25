@@ -4,6 +4,7 @@
     <!-- <view class="orders">我的订单</view> -->
     <view class="orders-list" wx:for="{{orders}}" wx:key="item" wx:for-index="idx" wx:for-item="item">
       <view class="orders-number">订单编号：{{item.orderid}}
+        <text class="orders-status" style='color: red;' wx:if="{{item.status == '6'}}">未付款</text>
         <text class="orders-status" wx:if="{{item.status == '1'}}">待发货</text>
         <text class="orders-status" wx:if="{{item.status == '2'}}">已发货</text>
         <text class="orders-status" style='color: #0b0;' wx:if="{{item.status == '3'}}">已签收</text>
@@ -20,7 +21,7 @@
       </block>
 
       <!--兑礼订单  -->
-      <!--1 待发货，2已发货，3完成，4问题件，5已退款  -->
+      <!--1 待发货，2已发货，3完成，4问题件，5已退款，6未付款 -->
       <view wx:if="{{item.isgift == '1'}}">
         <view class="orders-footer">
           <text>所用积分：{{item.total}}</text>
@@ -32,6 +33,7 @@
       <view wx:else>
         <view class="orders-footer">
           <text>订单金额：￥{{item.total}}</text>
+           <button wx:if="{{item.status == '6'}}" size="mini" class="orders-btn" data-orderid='{{item.orderid}}' bindtap="payOrders">去付款</button>
           <button wx:if="{{item.status == '2'}}" size="mini" class="orders-btn" data-indent='{{item.id}}' bindtap="logDetail">查看物流</button>
           <button wx:if="{{item.status == '3'}}" size="mini" class="orders-btn" data-indent='{{item.id}}' bindtap="logDetail">查看物流</button>
         </view>

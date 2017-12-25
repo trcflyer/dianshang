@@ -1,5 +1,7 @@
 // myorder.js
+var app = getApp()
 const getIndentHistoryServlet = require('../../httpconfig').getIndentHistoryServlet
+const buyIndentServlet = require('../../httpconfig').buyIndentServlet
 const hostUri = require('../../httpconfig').hostUri
 Page({
 
@@ -91,6 +93,7 @@ Page({
           });
         }
         console.info("[myorder][http][getIndentHistoryServlet][success]");
+        console.info(res.data);
         that.setData({
           orders: res.data.indentHistoryList,
           host: hostUri,
@@ -108,8 +111,43 @@ Page({
 
   },
   //支付
-  payOrders:function(){
-
+  payOrders: function (e){
+    var orderid = e.target.dataset.orderid;
+    var that = this;
+    var obj = wx.getStorageSync('user');
+    wx.request({
+      url: buyIndentServlet,
+      method: 'POST',
+      data: {
+        'userid': obj.id,
+        'orderid': orderid
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        console.info("[gopay][http][buyProductServlet][success]");
+        app.setRefreshShopCar(true);//更新购物车
+        wx.requestPayment({
+          'timeStamp': res.data.paymentDate.timeStamp,
+          'nonceStr': res.data.paymentDate.nonceStr,
+          'package': res.data.paymentDate.package,
+          'signType': res.data.paymentDate.signType,
+          'paySign': res.data.paymentDate.paySign,
+          'success': function (res) {
+            console.info('支付成功');
+            that.getIndentHistoryInfo();
+          },
+          'fail': function (res) {
+            console.info('支付失败');
+            console.info(res);
+          }
+        })
+      },
+      fail: function ({ errMsg }) {
+        console.info("[gopay][http][buyProductServlet][fail]:" + errMsg);
+      }
+    })
   },
   //物流详情信息
   logDetail:function(e){

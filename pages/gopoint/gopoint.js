@@ -12,6 +12,7 @@ Page({
     myPoint:0,//我的总积分
     giftInfo:[],//商品信息
     address: [],//用户信息
+    remark: ''//备注信息
     
   },
 
@@ -88,6 +89,11 @@ Page({
   onShareAppMessage: function () {
   
   },
+  remarkInput(e) {
+    this.setData({
+      remark: e.detail.value
+    });
+  },
   updateAddress() {
     wx.navigateTo({ url: '/pages/address/address' });
   },
@@ -104,6 +110,7 @@ Page({
         'name': that.data.address.name,
         'phone': that.data.address.phone,
         'address': that.data.address.detail,
+        'memo': that.data.remark
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
