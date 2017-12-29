@@ -42,6 +42,7 @@
       <image class="prodect_d_b_i" src="../../image/homepage.png"></image>
       <view>首页</view>
     </view>
+     <view class="prodect_detail_buttom_l_b" ></view>
     <view class="prodect_detail_buttom_l" bindtap="addColoect">
       <view wx:if="{{coloect == 1}}">
         <image class="prodect_d_b_i" src="../../image/coloect_t.png"></image>
@@ -50,6 +51,12 @@
         <image class="prodect_d_b_i" src="../../image/coloect.png"></image>
       </view>
       <view>收藏</view>
+    </view>
+     <view class="prodect_detail_buttom_l_b" ></view>
+    <view class="prodect_detail_buttom_l" bindtap="addToShopCar">
+      <image class="prodect_d_b_i" src="../../image/shop-car.png"></image>
+       <text class='prodect_d_b_i_r_n'>.</text> 
+        <view>购物车</view>
     </view>
     <view class="prodect_detail_buttom_r" bindtap="showModal">
       <image class="prodect_d_b_i" src="../../image/shop-car-o.svg"></image>

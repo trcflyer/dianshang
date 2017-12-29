@@ -14,8 +14,8 @@
       <view></view>
       <block wx:for="{{item.itemList}}" wx:key="index" wx:for-index="id" wx:for-item="index">
         <view class="orders-detail">
-          <image src="{{host}}{{index.product.cover}}" mode="scaleToFill" bindtap="prodectTap" data-product-id="{{index.product.id}}"></image>
-          <view class="detail-text">{{index.product.name}}</view>
+          <image src="{{host}}{{index.picPath}}" mode="scaleToFill" bindtap="prodectTap" data-product-id="{{index.productId}}"></image>
+          <view class="detail-text">{{index.productName}}</view>
           <view class="detail-text">数量:{{index.amount}}</view>
         </view>
       </block>

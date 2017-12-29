@@ -179,18 +179,24 @@
   }
 .prodect_detail_buttom_l{
   float: left;
-  background-color: gainsboro;
   width: 15%;
+   height: 45px;
+  text-align: center;
+}
+.prodect_detail_buttom_l_b{
+  float: left;
+  border-right: 1rpx solid #dbdbdb;
+  width: 1%;
    height: 45px;
   text-align: center;
 }
 .prodect_detail_buttom_r{
   float: right;
-  background-color: red;
+  background-color: #f6ac34;
   height: 45px;
-  width: 70%;
+  width: 52%;
   text-align: center;
-  color: wheat;
+  color: #fff;
   line-height: 40px;
 }
 .prodect_d_b_i {
@@ -198,6 +204,14 @@
   height: 40rpx;
   vertical-align: middle;
   margin-top: 15rpx;
+ 
+}
+.prodect_d_b_i_r_n{
+   position:absolute;
+    font-size: 60rpx;
+    top:-40rpx;
+    right: 57%;
+    color: red;
 }
 .prodect_detail_buttom_l view{
 text-align: center;

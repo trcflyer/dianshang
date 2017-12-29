@@ -232,6 +232,14 @@ Page({
     })
   },
   /**
+  * 返回首页
+  */
+  addToShopCar() {
+    wx.switchTab({
+      url: '/pages/shopcar/shopcar'
+    })
+  },
+  /**
    * 修改该商品的收藏状态
    */
   addColoect(){

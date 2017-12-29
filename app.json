@@ -27,8 +27,8 @@
       },
       {
         "pagePath": "pages/shopcar/shopcar",
-        "iconPath": "image/shop-car-o.png",
-        "selectedIconPath": "image/shop-car.png",
+        "iconPath": "image/shop-car.png",
+        "selectedIconPath": "image/shop-car-o.png",
         "text": "购物车"
       },
       {
