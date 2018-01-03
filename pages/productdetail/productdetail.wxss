@@ -64,9 +64,10 @@
   margin-bottom: 50px;
 }
 .detailPic{
-  width: 90%;
-  margin: 5%;
-  border-radius: 8rpx;
+  width: 100%;
+  margin-left:2rpx;
+  margin-right: 2rpx;
+  border-radius: 2rpx;
 }
 .line-image{
  background-color: #444;

@@ -96,11 +96,16 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        console.info(res.data);
         console.info("[feedback][http][saveFeedBackServlet][success]");
         wx.showToast({
           title: res.data.massage
         })
-        wx.navigateBack();
+        if ("提交成功" == res.data.massage){
+              that.setData({
+                feedback:""
+              });
+        }
       },
       fail: function ({ errMsg }) {
         console.info("[feedback][http][saveFeedBackServlet][fail]:" + errMsg);

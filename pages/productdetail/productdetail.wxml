@@ -1,5 +1,5 @@
 <view>
-  <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000" circular="true" style="height: {{imageHeight}}px;">
+  <swiper indicator-dots="true" autoplay="false" interval="2000" duration="1000" circular="true" style="height: {{imageTopHeight}}px;">
     <block wx:for="{{productDetial.detailTopPicList}}" wx:key="*this">
       <swiper-item>
         <image style="width: 100%;height: 100%;" mode="scaleToFill" src="{{host}}{{item}}"></image>

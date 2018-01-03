@@ -39,9 +39,21 @@
       <navigator url="/pages/feedback/feedback">意见反馈</navigator>
     </view>
   </view>
+  <view class="myorder-box">
+    <view class="myorder-manage">
+ <contact-button 
+  type="default-dark" 
+  size="27"
+  session-from="weapp"
+  >
+</contact-button>
+ </view>
+  </view>
     <view class="aboutus-box">
     <view class="aboutus-manage">
       <navigator url="/pages/aboutus/aboutus">关于我们</navigator>
     </view>
   </view>
+
+   
 </view>
