@@ -15,9 +15,11 @@
           <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
           <view>
             <view class='item-title'>{{itemName.name}}</view>
-            <view class='item-price'>所需积分:{{itemName.giftpoint}}</view>
           </view>
-          <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">积分兑换</button>
+          <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
+          <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
+          <text style='padding-left: 16rpx'>兑换</text>
+          </button>
     </view>
      </block>
      <block wx:if="{{idx%2 == 1 }}">
@@ -25,9 +27,11 @@
         <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
         <view>
           <view class='item-title'>{{itemName.name}}</view>
-          <view class='item-price'>所需积分:{{itemName.giftpoint}}</view>
         </view>
-        <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">积分兑换</button>
+        <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
+          <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
+          <text style='padding-left: 16rpx'>兑换</text>
+        </button>
       </view>
       </block>
       </block>

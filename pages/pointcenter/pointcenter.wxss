@@ -20,6 +20,7 @@
   display: inline-block;
   width: calc(50% - 40rpx);
   margin: 20rpx;
+  margin-bottom: 34rpx;
   background-image: radial-gradient(60% 55%, farthest-side,blue,green,#f6ac34,black);
 }
 .img-item {
@@ -41,6 +42,8 @@
   background: #ffdc94;
   border-color: #f6ac34;
   color: #444;
+  margin-top:14rpx;
+  margin-bottom: 20rpx;
   font-size: 16px;
   line-height: 60rpx;
 }

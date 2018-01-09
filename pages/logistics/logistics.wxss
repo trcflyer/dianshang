@@ -2,34 +2,48 @@
 @import '../common/common.wxss';
 
 .log-box{
+    padding-left: 20px;
     color: #666;
     font-size: 28rpx;
 }
-.log-list{
-    padding-left: 30rpx;
+.log-box:before {
+    position: absolute;
+    left: 20px;
+    margin-top: 24rpx;
+    content: '';
+    border: 3px solid #d9d9d9;
+    background-color: #b5b5b5;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    margin-left: -5px;
+    margin-right: 10px;
 }
+.log-list{
+    border-left: 1px solid #f1f1f2;
+    padding-left: 54rpx;
+}
+/* .log-list:after {
+    position: absolute;
+    left: 20px;
+    content: '';
+    border: 3px solid #f3f3f3;
+    background-color: #d9d9d9;
+    display: inline-block;
+    width: 1px;
+    height: 85px;
+    margin-left: -6px;
+    margin-right: 10px;
+} */
+
 .log-detail{
     position: relative;
-    padding: 35rpx 20rpx 35rpx 70rpx;
-    height: 50rpx;
+    padding: 15rpx 20rpx;
     align-content: center;
+    border-bottom: 1rpx solid #f1f1f2;
 }
-.log-detail .log-left{
-    position: absolute;
-    left: 0;
-    top: 10rpx;
-    width: 30%;
-  text-align: left;
-}
-.log-detail .log-middle{
-    position: absolute;
-    left: 25%;
-    top: 10rpx;
-    width: 5%;
-}
+
 .log-detail .log-right{
-    position: absolute;
-    right: 0;
-    top: 10rpx;
-    width: 65%;
-    }
+    margin-top: 16rpx;
+}

@@ -1,6 +1,10 @@
 @import '../common/common.wxss';
 
 /* myorder.wxss */
+.my-orders {
+  height: 100vh;
+  background: #ededed;
+}
 .orders-box{
     color: #999;
     font-size: 28rpx;
@@ -8,32 +12,38 @@
 
 .orders-list{
     padding-left: 30rpx;
-    border-bottom: 20rpx solid #ededed;
+    margin-bottom: 20rpx;
+    background: white;
 }
 .orders-list:last-child{
     border-bottom: 0;
 }
 .orders-number{
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 70rpx;
+    line-height: 70rpx;
     border-bottom: 1rpx solid #eee;
-    color: #ffa01a;
+    color: #404040;
 }
 .orders-status{
     position: absolute;
     right: 20rpx;
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 70rpx;
+    line-height: 70rpx;
     color: #ffa01a;
 }
 .orders-detail{
     position: relative;
     height: 120rpx;
-    padding: 25rpx 5rpx 5rpx 130rpx;
+    padding: 10rpx 5rpx 5rpx 140rpx;
     border-bottom: 1rpx solid #eee;
 }
 .orders-detail .detail-text{
-   color: #555;
+    padding: 6rpx 10rpx;
+    line-height: 30rpx;
+    color: #b5b5b5;
+}
+.orders-detail .detail-text.name {
+    color: #555;
 }
 .orders-detail image{
     position: absolute;
@@ -54,18 +64,17 @@
 }
 .orders-footer .orders-btn{
     float: right;
-    width: 220rpx;
-    height: 60rpx;
-    line-height:60rpx;
-    border-radius: 6rpx;
+    padding: 0 20rpx;
+    height: 50rpx;
+    line-height:50rpx;
+    border-radius: 30rpx;
     background: #fff;
-    
     color: #ffa01a;
+    font-size: 24rpx;
+    border:1px solid #ffa01a;
 }
 /* 修改边框颜色 */
-.orders-footer .orders-btn::after{  
-  border:1px solid #ffa01a;  
-}
+
 .order-no-data{
     padding:40rpx 0;
     color: #999;
