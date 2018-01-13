@@ -20,25 +20,13 @@
   color: #ffa01a;
   border-bottom: 1px solid #ffa01a;
   }
-.on::before {
+/* .on::before {
   content: "";
   position: absolute;
   bottom: 4rpx;
   width: 100%;
   height: 2rpx;
-}
-
-.swiper-box{ 
-  display: block;
-   height: 100%; 
-   width: 100%;     
-   overflow: hidden; 
-  background-color: #444444
-
-}
-.swiper-box view{
-	text-align: center;
-}
+} */
 .search {
   position: fixed;
   border: 1px solid #cdcdcd;

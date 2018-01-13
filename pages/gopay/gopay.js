@@ -11,9 +11,14 @@ Page({
     host: '',//主机网址
     totalPrice: 0,           // 总价，初始为0
     address:'',//寄送地址
-    addressshow: '',//寄送地址
+    addressshow_name: '',//寄送地址
+    addressshow_phone: '',//寄送地址
+    addressshow_address: '',//寄送地址
     payList:[],
     productIdList:[],
+    go_btn:"go-footer-btn",
+    x: 0,
+    y: 0,
     remark:''//备注信息
   },
 
@@ -21,7 +26,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    //获取系统信息
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          x: res.windowWidth - 45,
+          y: res.windowHeight * 0.6,
+        });
+      }
+    });
   },
 
   /**
@@ -52,7 +66,10 @@ Page({
       success: function (res) {
         self.setData({
           address: res.data,
-          addressshow: '邮寄地址：' + res.data.detail + '  ' + res.data.name + ' 收\n电话：' + res.data.phone,
+          addressshow_name: '收货人：'+ res.data.name ,
+          addressshow_phone:  res.data.phone,
+          addressshow_address: '邮寄地址：' + res.data.detail,//寄送地址
+          
         })
       }
     });
@@ -123,6 +140,22 @@ Page({
   GoOk(){
     var that = this;
     var obj = wx.getStorageSync('user');
+    if (that.data.address.name && that.data.address.phone &&that.data.address.detail)
+    {
+      
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '去填写右击地址',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({ url: '/pages/address/address' });
+          } else if (res.cancel) {
+            return;
+          }
+        }
+      })
+    }
     wx.request({
       url: buyProductServlet,
       method: 'POST',

@@ -27,7 +27,7 @@
 .header .points{
     position: absolute;
     top: 110rpx;
-    right: 150rpx;
+    right: 40rpx;
 }
 .aboutus-box{
     border-bottom: 1rpx solid #eee;
@@ -48,8 +48,8 @@
     content: '';
     width: 16rpx;
     height: 16rpx;
-    border-top: 4rpx solid #7f7f7f;
-    border-right: 4rpx solid #7f7f7f;
+    border-top: 4rpx solid #cdcdcd;
+    border-right: 4rpx solid #cdcdcd;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
@@ -72,8 +72,8 @@
     content: '';
     width: 16rpx;
     height: 16rpx;
-    border-top: 4rpx solid #7f7f7f;
-    border-right: 4rpx solid #7f7f7f;
+    border-top: 4rpx solid #cdcdcd;
+    border-right: 4rpx solid #cdcdcd;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
@@ -106,8 +106,18 @@
     content: '';
     width: 16rpx;
     height: 16rpx;
-    border-top: 4rpx solid #7f7f7f;
-    border-right: 4rpx solid #7f7f7f;
+    border-top: 4rpx solid #cdcdcd;
+    border-right: 4rpx solid #cdcdcd;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+contact-button {
+  position: fixed;
+  padding: 8px;
+  bottom: 30%;
+  right: 30rpx;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  opacity: .9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
 }

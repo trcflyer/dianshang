@@ -12,8 +12,11 @@ Page({
     myPoint:0,//我的总积分
     giftInfo:[],//商品信息
     address: [],//用户信息
-    remark: ''//备注信息
-    
+    remark: '',//备注信息
+    go_btn: "go-footer-btn",
+    x: 0,
+    y: 0
+
   },
 
   /**
@@ -28,6 +31,15 @@ Page({
           giftInfo: res.data,
           host: hostUri
         })
+      }
+    });
+    //获取系统信息
+    wx.getSystemInfo({
+      success: function (res) {
+        self.setData({
+          x: res.windowWidth - 45,
+          y: res.windowHeight * 0.6,
+        });
       }
     });
   },
@@ -50,6 +62,10 @@ Page({
         self.setData({
           address: res.data,
           myPoint:res.data.point,
+          addressshow_name: '收货人：' + res.data.name,
+          addressshow_phone: res.data.phone,
+          addressshow_address: '邮寄地址：' + res.data.detail,//寄送地址
+
         })
       }
     });
@@ -101,6 +117,21 @@ Page({
   GoOk: function () {
     let that = this;
     var obj = wx.getStorageSync('user');
+    if (that.data.address.name && that.data.address.phone && that.data.address.detail) {
+
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '去填写右击地址',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({ url: '/pages/address/address' });
+          } else if (res.cancel) {
+            return;
+          }
+        }
+      })
+    }
     wx.request({
       url: giftsServlet,
       method: 'POST',

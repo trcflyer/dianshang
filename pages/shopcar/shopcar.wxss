@@ -108,18 +108,7 @@
   left: 100px;
     width: 120rpx;
 }
-.cart-footer-gopay{
-  position: absolute;
-  right: 10px;
-  width: 70px;
-  line-height: 60rpx;
-  margin-top: 15rpx;
-  border:1rpx solid #fff;
-  font-size: 25rpx;
-  color: white;
-  text-align: center;
-  margin-left: 40px;
-}
+
 .cart-no-data{
     padding:40rpx 0;
     color: #999;

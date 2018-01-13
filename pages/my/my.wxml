@@ -1,11 +1,12 @@
 <view class="main">
+
   <view class="header">
     <image src="{{thumb}}" class="thumb"></image>
     <text class="nickname">{{nickname}}</text>
     <text class="userid">用户号：{{address.userid}}</text>
-     <text class="points">积分: {{address.point}}</text>
+    <text class="points">积分: {{address.point}}</text>
   </view>
-    <view class="myorder-box">
+  <view class="myorder-box">
     <view class="myorder-manage">
       <navigator url="/pages/myorder/myorder">我的订单</navigator>
     </view>
@@ -27,7 +28,7 @@
       <navigator url="/pages/collectlist/collectlist">我的收藏</navigator>
     </view>
   </view>
-   <view class="address-box">
+  <view class="address-box">
     <view class="address-manage">
       <navigator url="/pages/pointcenter/pointcenter">积分商城</navigator>
     </view>
@@ -39,21 +40,13 @@
       <navigator url="/pages/feedback/feedback">意见反馈</navigator>
     </view>
   </view>
-  <view class="myorder-box">
-    <view class="myorder-manage">
- <contact-button 
-  type="default-dark" 
-  size="27"
-  session-from="weapp"
-  >
-</contact-button>
- </view>
-  </view>
-    <view class="aboutus-box">
+  <!-- <contact-button class="btn-contact" type="default-light" size="27" session-from="weapp">
+  </contact-button> -->
+  <view class="aboutus-box">
     <view class="aboutus-manage">
       <navigator url="/pages/aboutus/aboutus">关于我们</navigator>
     </view>
   </view>
 
-   
+
 </view>

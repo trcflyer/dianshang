@@ -102,3 +102,39 @@ page{
 image {
   border-radius: 8rpx;
 }
+.go-footer-btn {
+  position: absolute;
+  right: 10px;
+  width: 70px;
+  line-height: 60rpx;
+  margin-top: 15rpx;
+  background: #f59b0a;
+  border: 1rpx solid #fff;
+  border-radius: 4px;
+  font-size: 25rpx;
+  color: white;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.go-footer-btn-dark {
+  position: absolute;
+  right: 10px;
+  width: 70px;
+  line-height: 60rpx;
+  margin-top: 15rpx;
+  background: #d7efee;
+  border: 1px solid whitesmoke;
+  border-radius: 37px;
+  font-size: 25rpx;
+  color: #555;
+  text-align: center;
+  margin-left: 40px;
+}
+contact-button {
+  padding: 6px;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  opacity: .6;
+  border: 1px solid rgba(220, 220, 220, .9);
+}

@@ -9,7 +9,8 @@ Page({
     carts:[],               // 购物车列表
     hasList:false,          // 列表是否有数据
     totalPrice:0,           // 总价，初始为0
-    selectAllStatus:true    // 全选状态，默认全选
+    selectAllStatus:true,    // 全选状态，默认全选
+    go_btn: "go-footer-btn",
   },
   /**
    * 系统方法

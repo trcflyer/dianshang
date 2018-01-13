@@ -1,8 +1,11 @@
 <!--pages/gopay/gopay.wxml-->
 <view>
 <view class='gopay-top' bindtap='updateAddress'>
-      <image class="gopay-thumb" src="../../image/changeAddress.png"></image>
-      <text>{{addressshow}}</text>
+      <image class="gopay-thumb" src="../../image/address.png"></image>
+      <text class='text1'>{{addressshow_name}}</text>
+      <text class='text2'>{{addressshow_phone}}</text>
+      <text class='text3'>{{addressshow_address}}</text>
+
 </view>
   <view class="gopay-box">
     <view class="gopay-list" wx:for="{{payList}}" wx:key="{{index}}">
@@ -26,7 +29,13 @@
     
   </view>
   <view class="gopay-footer">
-    <text class="gopay-footer-gopay" bindtap="GoOk">去付款</text>
+    <text class="{{go_btn}}" bindtap="GoOk">去付款</text>
     <text class="gopay-toatl-price">总金额￥:{{totalPrice}}</text>
   </view>
+   <movable-area style="position: fixed; top: 0; height: 100vh;width: 100vw;">
+    <movable-view direction="all"  x="{{x}}" y="{{y}}" style='width: 45px; height: 90px'>
+      <contact-button class="btn-contact" type="default-light" size="27" session-from="weapp">
+      </contact-button>
+    </movable-view>
+  </movable-area>
 </view>

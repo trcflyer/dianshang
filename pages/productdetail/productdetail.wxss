@@ -82,6 +82,7 @@
   left: 0;
   z-index: 2000;
   background: #fff;
+  border-top: 2rpx solid rgba(0, 0, 0, .08);
 }
 .commodity_screen {
   width: 100%;
@@ -179,6 +180,7 @@
   line-height: 45px;
   }
 .prodect_detail_buttom_l{
+   position:relative;
   float: left;
   width: 15%;
    height: 45px;
@@ -209,13 +211,15 @@
 }
 .prodect_d_b_i_r_n{
    position:absolute;
-    font-size: 60rpx;
-    top:-40rpx;
-    right: 57%;
-    color: red;
+    width: 15rpx;
+  height: 15rpx;
+  vertical-align: middle;
+    top: 10%;
+    right: 10%;
 }
 .prodect_detail_buttom_l view{
 text-align: center;
   line-height: 20px;
   font-size: 22rpx;
 }
+
