@@ -138,7 +138,7 @@ Page({
       success: function (res) {
         console.info("[address][http][getUserByUserIdServlet][success]");
         that.setData({
-          'address.point': obj.point,
+          'address.point': res.data.user.point,
           'address.name': res.data.user.username,
           'address.phone': res.data.user.phone,
           'address.detail': res.data.user.address,

@@ -1,5 +1,6 @@
 <view class="main">
 
+
   <view class="header">
     <image src="{{thumb}}" class="thumb"></image>
     <text class="nickname">{{nickname}}</text>
@@ -48,5 +49,6 @@
     </view>
   </view>
 
-
+<import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+<template is="myContactBtn" />
 </view>

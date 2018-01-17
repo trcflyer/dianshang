@@ -1,0 +1,9 @@
+<!--pages/tem_contactbtn/tem_contactbtn.wxml-->
+<template name="myContactBtn">
+  <movable-area style="position: fixed; right: 0;top:60%; height: 45px;width: 45px;">
+    <movable-view direction="all" x='20'  style='width: 45px; height: 45px'>
+      <contact-button class="btn-contact" type="default-light" size="27" session-from="weapp">
+      </contact-button>
+    </movable-view>
+  </movable-area>
+</template>

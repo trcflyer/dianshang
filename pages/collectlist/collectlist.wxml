@@ -11,6 +11,8 @@
       <image class="image-shopadd" data-product-id="{{itemName.id}}" catchtap="addShopCar" src="../../image/addshop.png"></image>
     </view>
   </block>
+    <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+<template is="myContactBtn" />
 </view>
 <view wx:else>
   <view class="cart-no-data">你还没有收藏商品哟</view>

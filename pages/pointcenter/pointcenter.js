@@ -17,15 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
-    wx.getStorage({
-      key: 'address',
-      success: function (res) {
-        self.setData({
-          myPoint: res.data.point
-        })
-      }
-    })
+   
   },
 
   /**
@@ -39,7 +31,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.gethttpGiftsServlet();
+    var self = this;
+    self.gethttpGiftsServlet();
+    wx.getStorage({
+      key: 'address',
+      success: function (res) {
+        self.setData({
+          myPoint: res.data.point
+        })
+      }
+    })
   },
 
   /**

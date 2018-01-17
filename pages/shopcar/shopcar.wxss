@@ -29,8 +29,9 @@
   font-size: 30rpx;
   overflow: hidden;
   white-space: nowrap;
-   text-overflow: ellipsis; 
+  text-overflow: ellipsis; 
   line-height: 40rpx;
+
 }
 .cart-list .cart-pro-price{
     font-size:28rpx;
@@ -63,17 +64,12 @@
     border-bottom: 1px solid #dbdbdb;
     margin: 15rpx;
 }
-.cart-del{
-    position: absolute;
-    right:30rpx;
-    top:20rpx;
-    width:50rpx;
-    height:50rpx;
-    color:#b5b5b5;
-    line-height:80rpx;
-    text-align:center;
-    font-size:44rpx;
-    opacity:.6;
+.cart-list .cart-del{
+   position: absolute;
+    right: 20rpx;
+    top: 90rpx;
+    width: 50rpx;
+    height: 50rpx;
 }
 .cart-footer{
     position: fixed;

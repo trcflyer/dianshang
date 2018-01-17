@@ -11,6 +11,8 @@ Page({
     totalPrice:0,           // 总价，初始为0
     selectAllStatus:true,    // 全选状态，默认全选
     go_btn: "go-footer-btn",
+    x: 0,
+    y: 0
   },
   /**
    * 系统方法
@@ -28,6 +30,22 @@ Page({
     }
     
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    //获取系统信息
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          x: res.windowWidth - 45,
+          y: res.windowHeight * 0.6,
+        });
+      }
+    });
+  },
+
   /**
    * 当前商品选中事件
    */
@@ -147,13 +165,7 @@ Page({
       }
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-   
-    
-  },
+ 
   //下拉刷新
   onPullDownRefresh: function () {
     var that = this;

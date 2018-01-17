@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="containe">
+
 <swiper indicator-dots="true"
   autoplay="true" interval="2000" duration="1000" circular="true" style="height: {{imageHeight}}px;">
   <block wx:for="{{imgUrls}}" wx:key="topswiper">
@@ -34,4 +35,6 @@
             </view>
       </block>
        <view class="cart-no-data">--已加载全部数据--</view>
+       <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+      <template is="myContactBtn" />
 </view>

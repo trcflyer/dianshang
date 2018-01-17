@@ -111,7 +111,7 @@
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-contact-button {
+/* contact-button {
   position: fixed;
   padding: 8px;
   bottom: 30%;
@@ -120,4 +120,4 @@ contact-button {
   border-radius: 50%;
   opacity: .9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
-}
+} */

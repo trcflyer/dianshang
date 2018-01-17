@@ -17,6 +17,7 @@ Page({
     payList:[],
     productIdList:[],
     go_btn:"go-footer-btn",
+    canClick:true,
     x: 0,
     y: 0,
     remark:''//备注信息
@@ -156,6 +157,9 @@ Page({
         }
       })
     }
+    if (!that.data.canClick){
+      return;
+    }
     wx.request({
       url: buyProductServlet,
       method: 'POST',
@@ -173,7 +177,10 @@ Page({
       success: function (res) {
         console.info("[gopay][http][buyProductServlet][success]");
         app.setRefreshShopCar(true);//更新购物车
-        console.info(res.data);
+        that.setData({                                // 最后赋值到data中渲染到页面
+          go_btn: "go-footer-btn-dark",
+          canClick: false,
+        });
         wx.requestPayment({
           'timeStamp': res.data.paymentDate.timeStamp,
           'nonceStr': res.data.paymentDate.nonceStr,
@@ -192,6 +199,10 @@ Page({
         })
       },
       fail: function ({ errMsg }) {
+        that.setData({                                // 最后赋值到data中渲染到页面
+          go_btn: "go-footer-btn-dark",
+          canClick: false,
+        });
         console.info("[gopay][http][buyProductServlet][fail]:" + errMsg);
       }
     })

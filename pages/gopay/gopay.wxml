@@ -32,10 +32,6 @@
     <text class="{{go_btn}}" bindtap="GoOk">去付款</text>
     <text class="gopay-toatl-price">总金额￥:{{totalPrice}}</text>
   </view>
-   <movable-area style="position: fixed; top: 0; height: 100vh;width: 100vw;">
-    <movable-view direction="all"  x="{{x}}" y="{{y}}" style='width: 45px; height: 90px'>
-      <contact-button class="btn-contact" type="default-light" size="27" session-from="weapp">
-      </contact-button>
-    </movable-view>
-  </movable-area>
+     <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+<template is="myContactBtn" />
 </view>

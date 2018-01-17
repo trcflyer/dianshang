@@ -13,7 +13,8 @@
     "pages/collectlist/collectlist",
     "pages/gopay/gopay",
     "pages/gopoint/gopoint",
-    "pages/logistics/logistics"
+    "pages/logistics/logistics",
+    "pages/tem_contactbtn/tem_contactbtn"
   ],
   "tabBar": {
     "color": "#666666",

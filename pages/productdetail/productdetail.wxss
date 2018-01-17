@@ -58,7 +58,8 @@
 }
 .item-intro {
   padding-left: 20rpx;
-  line-height:25rpx;
+  padding-right: 20rpx;
+  margin-bottom: 10px;
 }
 .prodect-detail{
   margin-bottom: 50px;

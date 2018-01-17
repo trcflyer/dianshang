@@ -38,4 +38,6 @@
     </view>
     
   </scroll-view>
+    <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+<template is="myContactBtn" />
 </view>

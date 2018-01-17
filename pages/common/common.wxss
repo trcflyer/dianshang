@@ -125,7 +125,7 @@ image {
   margin-top: 15rpx;
   background: #d7efee;
   border: 1px solid whitesmoke;
-  border-radius: 37px;
+  border-radius: 4px;
   font-size: 25rpx;
   color: #555;
   text-align: center;

@@ -45,4 +45,6 @@
       <view class="order-no-data">你还没有订单哦，赶快去消费吧~</view>
     </view>
   </view>
+    <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+<template is="myContactBtn" />
 </view>

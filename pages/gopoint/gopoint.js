@@ -14,6 +14,7 @@ Page({
     address: [],//用户信息
     remark: '',//备注信息
     go_btn: "go-footer-btn",
+    canClick: true,
     x: 0,
     y: 0
 
@@ -132,6 +133,9 @@ Page({
         }
       })
     }
+    if (!that.data.canClick) {
+        return ;
+    }
     wx.request({
       url: giftsServlet,
       method: 'POST',
@@ -148,10 +152,22 @@ Page({
       },
       success: function (res) {
         console.info("[gopoint][http][giftsServlet][success]");
+        that.setData({                                // 最后赋值到data中渲染到页面
+          go_btn: "go-footer-btn-dark",
+          canClick: false,
+          'address.point': res.data.point,
+        });
+        wx.setStorage({
+          key: 'address',
+          data: that.data.address,
+          success() {
+
+          }
+        })
         wx.showToast({
           title: res.data.massage
         })
-        if ('兑礼成功' == res.data.massage){
+        if (1 === res.data.status){
           that.sleep();
           wx.navigateBack();
         }
@@ -159,7 +175,10 @@ Page({
        
       },
       fail: function ({ errMsg }) {
-       
+        that.setData({                                // 最后赋值到data中渲染到页面
+          go_btn: "go-footer-btn-dark",
+          canClick: false,
+        });
         console.info("[gopoint][http][giftsServlet][fail]:" + errMsg);
       }
     })
