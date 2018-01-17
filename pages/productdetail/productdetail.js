@@ -212,6 +212,7 @@ Page({
       },
       success: function (res) {
         console.info("[productdetail][http][saveCarProductServlet][success]"+res);
+        app.setRefreshShopCar(true);//更新购物车
         that.cancelLoading();
         that.hideModal();
         that.setData({
@@ -220,7 +221,7 @@ Page({
         wx.showToast({
           title: res.data.massage
         })
-        app.setRefreshShopCar(true);//更新购物车
+       
       },
       fail: function ({ errMsg }) {
         that.cancelLoading();

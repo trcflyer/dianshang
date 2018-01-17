@@ -9,7 +9,8 @@
 
 
   <view class="prodect-desc item-row">
-    <view class="item-title">{{productDetial.productDetial.name}} {{productDetial.productDetial.title}}</view>
+    <view class="item-title">{{productDetial.productDetial.name}} </view>
+    <view class="item-title"> {{productDetial.productDetial.title}}</view>
     <view class="price-off">￥:{{productDetial.productDetial.price}}</view>
     <view class="item-price">￥:{{productDetial.productDetial.baseprice}}</view>
     <view class='item-about'>

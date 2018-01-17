@@ -32,6 +32,12 @@
 }
 .item-title {
   font-size: 28rpx;
+   text-overflow: ellipsis; 
+   overflow: hidden;
+  display:-webkit-box; 
+-webkit-box-orient:vertical;
+-webkit-line-clamp:2; 
+height: 80rpx;
 }
 .item-price {
   font-size: 24rpx;
