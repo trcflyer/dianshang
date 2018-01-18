@@ -16,7 +16,7 @@ Page({
     winWidth: 0,
     winHeight: 0,
     imageHeight: 0,
-
+    loading:"--已加载全部数据--",
     // tab切换
     currentTab: '0',
     currentPage:1,
@@ -46,6 +46,7 @@ Page({
         currentTab:e.target.dataset.current,
         currentPage:1,
       });
+      console.info("currentTab:"+that.data.currentTab);
       that.gethttpProductListByCategoryServlet();
       // var currentTab = e.target.dataset.current;
       // wx.navigateTo({ url: '/pages/productlist/productlist?currentTab=' + currentTab  }) 
@@ -57,11 +58,16 @@ Page({
     let p = that.data.currentPage;
     p = p+1;
     that.setData({
+      loading:"奋力加载中...",
       currentPage:p
     });
     that.gethttpProductListByCategoryServlet();
   },
-
+  onShow:function(){
+    this.setData({
+      searchKey: ''
+    });
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -166,7 +172,7 @@ Page({
     if (page != 1){
       tempProdect =  that.data.products
     }
-    console.log(that.data.currentPage);
+    console.log("currentPage:"+that.data.currentPage);
     wx.request({
       url: productListByCategoryServlet,
       method: 'POST',
@@ -186,6 +192,7 @@ Page({
         if (res.data.productListByCategoryList.length == 0){
           that.setData({
             currentPage: that.data.currentPage-1,
+            loading:'--已加载全部数据--'
           });
           return ;
         }

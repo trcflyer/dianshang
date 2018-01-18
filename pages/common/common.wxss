@@ -38,8 +38,9 @@ page{
   font-size: 30rpx;
   overflow: hidden;
   white-space: nowrap;
-  /* text-overflow: ellipsis; */
+   text-overflow: ellipsis; 
   line-height: 40rpx;
+  padding-right: 15rpx;
 }
 .item-intro {
   font-size: 25rpx;

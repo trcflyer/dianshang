@@ -16,10 +16,14 @@
 .item-about {
   margin: 18rpx 0;
   padding: 4rpx 10rpx;
-  color: #999;
+  color: #444;
   font-size: 26rpx;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+}
+.item-about .trans-postage {
+  color: red;
+   font-size: 24rpx;
 }
 .item-about .item-stock {
   float: right;

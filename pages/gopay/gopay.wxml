@@ -24,7 +24,7 @@
     </view>
     <view class='gopay-item'>
      <text class='item-title'>配送方式</text>
-      <text  class='item-right'>快递 免运费</text>
+      <text  class='item-right'>{{postageMoney}}</text>
     </view>
     
   </view>

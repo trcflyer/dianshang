@@ -126,12 +126,12 @@ position: absolute;
   position: absolute;
   top: 15rpx;
   left: 25rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 
 .gopay-item .item-right {
   position: absolute;
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #555;
   line-height: 50rpx;
   right: 50rpx;

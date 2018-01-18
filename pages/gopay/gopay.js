@@ -17,6 +17,7 @@ Page({
     payList:[],
     productIdList:[],
     go_btn:"go-footer-btn",
+    postageMoney:"快递，免运费",
     canClick:true,
     x: 0,
     y: 0,
