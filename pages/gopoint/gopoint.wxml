@@ -28,9 +28,13 @@
        <input   placeholder="您的留言" bindinput='remarkInput'/>
     </view>
 
-    <view class='gopay-item'>
+    <view class='gopay-item'style="border-bottom: 1rpx solid #fff;">
      <text class='item-title'>配送方式</text>
-      <text  class='item-right'>快递 免运费</text>
+      <text  class='item-right'>快递</text>
+    </view>
+     <view class='gopay-item'style=" margin-top: 0rpx;border-top: 1rpx solid #fff;">
+     <text class='item-title'>运费</text>
+      <text  class='item-right'>免运费</text>
     </view>
     
   </view>

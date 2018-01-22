@@ -4,7 +4,7 @@
     <view wx:if="{{hasList}}">
       <!-- <view class="orders">我的订单</view> -->
       <view class="orders-list" wx:for="{{orders}}" wx:key="item" wx:for-index="idx" wx:for-item="item">
-        <view class="orders-number">订单编号：{{item.orderid}}
+        <view class="orders-number"><text selectable='true'>订单编号：{{item.orderid}}</text>
           <text class="orders-status" style='color: red;' wx:if="{{item.status == '6'}}">未付款</text>
           <text class="orders-status" wx:if="{{item.status == '1'}}">待发货</text>
           <text class="orders-status" wx:if="{{item.status == '2'}}">已发货</text>

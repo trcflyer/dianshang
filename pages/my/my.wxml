@@ -4,7 +4,7 @@
   <view class="header">
     <image src="{{thumb}}" class="thumb"></image>
     <text class="nickname">{{nickname}}</text>
-    <text class="userid">用户号：{{address.userid}}</text>
+    <text class="userid" selectable='true'>用户号：{{address.userid}}</text>
     <text class="points">积分: {{address.point}}</text>
   </view>
   <view class="myorder-box">

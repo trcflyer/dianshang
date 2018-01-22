@@ -9,6 +9,7 @@ Page({
    */
   data: {
     host: '',//主机网址
+    shopPrice:0,//商品金额
     totalPrice: 0,           // 总价，初始为0
     address:'',//寄送地址
     addressshow_name: '',//寄送地址
@@ -17,7 +18,7 @@ Page({
     payList:[],
     productIdList:[],
     go_btn:"go-footer-btn",
-    postageMoney:"快递，免运费",
+    postageMoney:"免运费",
     canClick:true,
     x: 0,
     y: 0,
@@ -117,13 +118,23 @@ Page({
   getTotalPrice() {
     let carts = this.data.payList;                  // 获取购物车列表
     let total = 0;
+    let tempPrice =10;
     let list = [];
     for (let i = 0; i < carts.length; i++) {         // 循环列表得到每个数据
         total += carts[i].amount * carts[i].price;   // 所有价格加起来
         list.push(carts[i].product.id);
     }
+    if (total.toFixed(2)>200){
+      tempPrice = total;
+    }else{
+      tempPrice += total;
+      this.setData({
+        postageMoney: '10元',
+      });
+    }
     this.setData({                                // 最后赋值到data中渲染到页面
-      totalPrice: total.toFixed(2),
+      shopPrice: total.toFixed(2),
+      totalPrice: tempPrice.toFixed(2),
       productIdList: list
     });
   },
@@ -170,7 +181,8 @@ Page({
         'phone': that.data.address.phone,
         'address': that.data.address.detail,
         'productIdList': that.data.productIdList,
-        'memo': that.data.remark
+        'memo': that.data.remark,
+        'total': that.data.totalPrice
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',

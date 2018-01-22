@@ -2,42 +2,46 @@
 <view class='contain'>
   <view class='tab'>
     <view class='tab-left'>
-      <text>你的积分: </text>
+      <text style="margin-left:20rpx;">我的积分: </text>
       <text style="font-size:32rpx;">{{myPoint}}</text>
     </view>
   </view>
-  <scroll-view scroll-y>
-    <view class='main'>
-      <block wx:for="{{productList}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="gift">
-            <block wx:if="{{idx%2 == 0 }}">
-           
-      <view class='img-wrap'  >
-          <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
-          <view>
-            <view class='item-title'>{{itemName.name}}</view>
-          </view>
-          <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
-          <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
-          <text style='padding-left: 16rpx'>兑换</text>
-          </button>
-    </view>
-     </block>
-     <block wx:if="{{idx%2 == 1 }}">
-      <view class='img-wrap' >
-        <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
-        <view>
-          <view class='item-title'>{{itemName.name}}</view>
-        </view>
-        <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
-          <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
-          <text style='padding-left: 16rpx'>兑换</text>
-        </button>
+  <view wx:if="{{hasList}}">
+    <scroll-view scroll-y>
+      <view class='main'>
+        <block wx:for="{{productList}}" class="flex-wrp" wx:for-index="idx" wx:for-item="itemName" wx:key="gift">
+          <block wx:if="{{idx%2 == 0 }}">
+
+            <view class='img-wrap'>
+              <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
+              <view>
+                <view class='item-title'>{{itemName.name}}</view>
+              </view>
+              <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
+                <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
+                <text style='padding-left: 16rpx'>兑换</text>
+              </button>
+            </view>
+          </block>
+          <block wx:if="{{idx%2 == 1 }}">
+            <view class='img-wrap'>
+              <image class='img-item' src="{{host}}{{itemName.cover}}" bindtap="giftImgTap" data-gift-id="{{itemName.id}}"></image>
+              <view>
+                <view class='item-title'>{{itemName.name}}</view>
+              </view>
+              <button class='btn-item' bindtap="giftButtonTap" data-gift-id="{{itemName.id}}">
+                <text style='color: gold;padding-right: 16rpx;text-shadow:1px 1px 2px red'>{{itemName.giftpoint}}</text>
+                <text style='padding-left: 16rpx'>兑换</text>
+              </button>
+            </view>
+          </block>
+        </block>
       </view>
-      </block>
-      </block>
-    </view>
-    
-  </scroll-view>
-    <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
-<template is="myContactBtn" />
+    </scroll-view>
+  </view>
+  <view wx:else>
+    <view class="order-no-data">~积分商城暂无商品,敬请期待~</view>
+  </view>
+  <import src="../tem_contactbtn/tem_contactbtn.wxml" />
+  <template is="myContactBtn" />
 </view>

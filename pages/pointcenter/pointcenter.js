@@ -10,6 +10,7 @@ Page({
   data: {
     productList:[],
     host: '',//主机网址
+    hasList: false,          // 列表是否有数据
     myPoint:''
   },
 
@@ -96,6 +97,15 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success: function (res) {
+        if (res.data.productList.length > 0) {
+          that.setData({
+            hasList: true,
+          });
+        } else {
+          that.setData({
+            hasList: false,
+          });
+        }
         wx.stopPullDownRefresh();
         console.info("[index][http][getGiftsServlet][success]");
         that.setData({
