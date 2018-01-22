@@ -42,7 +42,6 @@
   color: #555;
   border-bottom:1px solid #ddd;
 }
-
 .line{
   background-color: #444;
   width: 100%;
@@ -67,11 +66,10 @@
 }
 .prodect-detail{
   margin-bottom: 50px;
+  text-align: center;
 }
 .detailPic{
-  width: 100%;
-  margin-left:2rpx;
-  margin-right: 2rpx;
+  width: 99.5%;
   border-radius: 2rpx;
 }
 .line-image{
@@ -227,4 +225,3 @@ text-align: center;
   line-height: 20px;
   font-size: 22rpx;
 }
-
