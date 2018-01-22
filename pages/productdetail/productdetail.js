@@ -16,7 +16,6 @@ Page({
     winWidth: 0,
     winHeight: 0,
     imageTopHeight: 0,
-    imageHeight:0,
     productDetial:{},
     buyCount: 1,//将要添加到购物车的商品的数量
     coloect : 0,//商品是否已收藏
@@ -39,7 +38,6 @@ Page({
         that.setData({
           winWidth: res.windowWidth,
           winHeight: res.windowHeight,
-          imageHeight: res.windowWidth,
           imageTopHeight: h,
           x: res.windowWidth-45,
           y: res.windowHeight*0.6,

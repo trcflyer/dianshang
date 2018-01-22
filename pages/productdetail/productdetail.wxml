@@ -33,7 +33,7 @@
   <view class="item-intro"> <text style='line-height:35rpx;font-size:27rpx;text-indent:25px;'>{{productDetial.productDetial.intro}}</text></view>
   <view class="prodect-detail">
     <block wx:for="{{productDetial.detailPicList}}" wx:key="detailPicList">
-      <image class="detailPic" style='height: {{imageHeight}}px;' src="{{host}}{{item}}" mode="scaleToFill"></image>
+      <image class="detailPic"  src="{{host}}{{item}}" mode="widthFix"></image>
     </block>
   </view>
   <!-- <image wx:for="{{productDetial.detailPicList}}" src="{{host}}{{item}}" wx:key="*this" mode="scaleToFill" style="height:{{imageHeight}}px;" ></image> -->

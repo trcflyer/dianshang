@@ -190,6 +190,13 @@ Page({
         console.info("[index][http][productListByCategoryServlet][success]");
        // that.cancelLoading();
         if (res.data.productListByCategoryList.length == 0){
+          if (page == 1) {
+            that.setData({
+              loading: '暂无数据，敬请期待',
+                products: tempProdect,
+            });
+            return;
+          }
           that.setData({
             currentPage: that.data.currentPage-1,
             loading:'--已加载全部数据--'

@@ -9,7 +9,8 @@ Page({
       point: '',
       name:'',
       phone:'',
-      detail:''
+      detail:'',
+      
     }
   },
   /**
@@ -73,7 +74,6 @@ Page({
       'address.detail' : e.detail.value
     })
   },
-  
   /**
    * 更新用户保存的地址数据
    */

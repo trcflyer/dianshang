@@ -1,17 +1,30 @@
 @import '../common/common.wxss';
 
 .form-box{
-    padding-left: 30rpx;
+    padding-left: 20rpx;
+}
+.input-item-green{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+    border-bottom: 1rpx solid rgba(0, 200, 0,.4);
+}
+.input-item-default{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+    border-bottom: 1rpx solid #ebebeb;
+}
+.left{
+    width: 20%;
 }
 .form-box input{
-    height: 90rpx;
-    border-bottom: 1rpx solid #ededed;
+    height: 80rpx;
+    width: 90%;
     font-size: 28rpx;
-    color: #444;
+    margin-left: 10rpx;
 }
-.form-box .input-placeholder{
-    color: #999;
-}
+
 .form-box button{
    margin:20rpx 20rpx 0 0;
     font-size: 36rpx;
