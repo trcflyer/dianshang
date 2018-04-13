@@ -3,17 +3,23 @@
   padding-top: 20rpx;
   text-align: left,center;
   color: goldenrod;
-  background: #4a1b16 url(../../image/bg.png) repeat;
+  background: #4a1b16;
+  /* background: #4a1b16 url(../../image/bg.png) repeat; */
+ height: 100vh; overflow-y: auto;
 }
 .tab {
-
-}
-.tab-left,
-.tab-right {
   display: inline-block;
   width: 100%;
-  height: 70rpx;
+  height: 100rpx;
   border-bottom: 1rpx solid #f6ac34;
+}
+.tab-top-left {
+    float: left;
+  margin-left: 30rpx;
+}
+.tab-top-right {
+   float: right;
+   margin-right: 30rpx;
 }
 .main {
   

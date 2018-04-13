@@ -1,5 +1,6 @@
 //app.js
 const getOpenIdServlet = require('httpconfig').getOpenIdServlet
+const shareServlet = require('httpconfig').shareServlet
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -10,11 +11,12 @@ App({
     wx.checkSession({
       success: function () {
         //session 未过期，并且在本生命周期一直有效
-      that.getLogin();
+     that.getLogin();
         console.log("openid未失效");
       },
       fail: function () {
         //登录态过期
+        console.log("openid登录态过期");
         that.getLogin();
       }
     })
@@ -49,6 +51,8 @@ App({
   },
   getLogin() {
     var that = this;
+    var fromOpenId = wx.getStorageSync('fromId');
+    console.info("[app][http][getLogin]fromOpenId:" + fromOpenId);
     //获取用户登陆信息，用code换取openid
     wx.login({
       success: function (res) {
@@ -62,15 +66,18 @@ App({
             data: {
                "code": res.code ,
                "classify":"1",
-               "userName": nickName
+               "userName": nickName,
+               "shareoutopenid":fromOpenId
                },
             header: {
               'Content-Type': 'application/x-www-form-urlencoded',
             },
             success: function (res) {
+              console.info("[app][http][getLogin][success]:");
               var obj = {};
               obj = res.data.user;
-              wx.setStorageSync('user', obj);//存储openid    
+              wx.setStorageSync('user', obj);//存储openid 
+              wx.removeStorageSync("fromId");
             }
           });
         } else {

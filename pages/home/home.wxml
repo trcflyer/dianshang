@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="containe">
+
+<swiper indicator-dots="true"
+  autoplay="true" interval="2000" duration="1000" circular="true" style="height: {{imageHeight}}px;">
+  <block wx:for="{{imgUrls}}" wx:key="topswiper">
+    <swiper-item>
+        <image style="width: 100%;height: 100%;" mode="scaleToFill" src="{{host}}{{item.cover}}" bindtap="prodectTopTap" data-product-id="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="swiper-tab" >  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="{{categoryList[0].id}}" bindtap="swichNav">{{categoryList[0].name}}</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="{{categoryList[1].id}}" bindtap="swichNav">{{categoryList[1].name}}</view>  
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="{{categoryList[2].id}}" bindtap="swichNav">{{categoryList[2].name}}</view>  
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="{{categoryList[3].id}}" bindtap="swichNav">{{categoryList[3].name}}</view>
+    <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="{{categoryList[4].id}}" bindtap="swichNav">{{categoryList[4].name}}</view>
+    
+</view>  
+<view class="search">
+ <input class="input" confirm-type="search" name="userName" placeholder=""
+ value='{{searchKey}}' bindconfirm="searchInput"/>
+ <image  src="../../image/search.png"></image>
+ </view>
+
+<block wx:for="{{products}}" class="flex-wrp"  wx:for-index="idx" wx:for-item="itemName" wx:key="pswiper1">
+         <view class="item-row" bindtap="prodectTap" data-product-id="{{itemName.id}}">
+                <image class='image-left' src="{{host}}{{itemName.cover}}"></image>
+                <view class="item-title">{{itemName.name}} </view>
+                <view class="item-count">月成交量：{{itemName.monthlysales}}</view>
+                <text class="price-off">￥:{{itemName.price}}</text>
+                <text class="item-price">￥:{{itemName.baseprice}}</text>
+                <!-- <view class="btn-add" data-product-id="{{itemName.id}}" catchtap="addShopCar">+</view> -->
+                <image class="image-shopadd" data-product-id="{{itemName.id}}" catchtap="addShopCar" src="../../image/addshop.png"></image>
+            </view>
+      </block>
+       <view class="cart-no-data">{{loading}}</view>
+       <import src="../tem_contactbtn/tem_contactbtn.wxml"/>
+      <template is="myContactBtn" />
+</view>

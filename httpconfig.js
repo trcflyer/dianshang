@@ -1,8 +1,8 @@
 /**
  * 小程序网络请求配置文件
+ * post : 6010
  */
-var host = "https://naru.net.cn/ssh_eshop_mysql"
-
+var host = "https://naru.net.cn:6010/ssh_eshop_mysql"
 var httpconfig = {
   // host
   hostUri: `${host}`,
@@ -63,6 +63,9 @@ var httpconfig = {
 
   //物流信息
   getCarrieInfoServlet: `${host}/GetCarrieInfoServlet.servlet`,
+  
+  //物流信息
+  shareServlet: `${host}/ShareServlet.servlet`,
 };
 
 module.exports = httpconfig

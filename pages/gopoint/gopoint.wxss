@@ -32,7 +32,7 @@ position: absolute;
   top: 70rpx;
   left: 120rpx;
   right: 70rpx;
-  font-size: 20rpx;
+  font-size: 22rpx;
 }
 .gopay-top::after{
     position: absolute;

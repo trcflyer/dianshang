@@ -10,6 +10,7 @@ Page({
       name:'',
       phone:'',
       detail:'',
+      currentInput:0
       
     }
   },
@@ -61,17 +62,35 @@ Page({
   },
   bindName(e){
     this.setData({
-      'address.name' : e.detail.value
+      'address.name' : e.detail.value,
+      currentInput:1,
     })
   },
   bindPhone(e){
     this.setData({
-      'address.phone' : e.detail.value
+      'address.phone' : e.detail.value,
+      currentInput:2
     })
   },
   bindDetail(e){
     this.setData({
-      'address.detail' : e.detail.value
+      'address.detail' : e.detail.value,
+      currentInput:3
+    })
+  },
+  bindFocusName(e){
+    this.setData({
+      currentInput: 1
+    })
+  },
+  bindFocusPhone(e) {
+    this.setData({
+      currentInput: 2
+    })
+  },
+  bindFocusDetail(e) {
+    this.setData({
+      currentInput: 3
     })
   },
   /**
@@ -117,5 +136,16 @@ Page({
       })
     }
    
+  },
+  /**
+     * 用户点击右上角分享
+     */
+  onShareAppMessage: function () {
+    var obj = wx.getStorageSync('user');
+    return {
+      title: '哇，发现一个好玩的应用，赶快来体验吧',
+      path: '/pages/index/index?fromId=' + obj.openid,
+      imageUrl: '../../image/shareImage.jpg'
+    }
   },
 })

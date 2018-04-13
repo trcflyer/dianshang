@@ -1,12 +1,13 @@
-// pages/tem_contactbtn/tem_contactbtn.js
+// pages/module/module.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    x: 0,
-    y: 0
+    navLeftItems: [],
+    navRightItems: [],
+    curNav: 1,
+    curIndex:0 
   },
 
   /**
@@ -14,15 +15,22 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    //获取系统信息
-    wx.getSystemInfo({
+    wx.request({
+      url: 'http://huanqiuxiaozhen.com/wemall/goodstype/typebrandList',
+      method: 'GET',
+      data: {},
+      header: {
+        'Accept': 'application/json'
+      },
       success: function (res) {
+        console.info(res);
         that.setData({
-          x: res.windowWidth - 45,
-          y: res.windowHeight * 0.6,
-        });
+          hasList: true,
+          navLeftItems: res.data,
+          navRightItems: res.data
+        })
       }
-    });
+    })
   },
 
   /**
@@ -73,7 +81,13 @@ Page({
   onShareAppMessage: function () {
   
   },
-  handleTap2(e){
-    console.info(e)
+  //事件处理函数
+  switchRightTab: function (e) {
+    let id = e.target.dataset.id,
+    index = parseInt(e.target.dataset.index);
+    this.setData({
+      curNav: id,
+      curIndex: index
+    })
   }
 })

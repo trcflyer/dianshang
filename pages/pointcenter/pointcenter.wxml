@@ -1,9 +1,15 @@
 <!--pages/pointcenter/pointcenter.wxml-->
 <view class='contain'>
   <view class='tab'>
-    <view class='tab-left'>
-      <text style="margin-left:20rpx;">我的积分: </text>
+    <view class='tab-top-left'>
+      <text >我的总积分: </text>
       <text style="font-size:32rpx;">{{myPoint}}</text>
+      <text style="font-size:22rpx;">\n每消费10元得1积分</text>
+    </view>
+    <view class='tab-top-right'>
+      <text > 有效分享人数积分: </text>
+      <text style="font-size:32rpx;">{{sharecount}}</text>
+      <text style="font-size:22rpx;">\n每分享一人得1积分</text>
     </view>
   </view>
   <view wx:if="{{hasList}}">

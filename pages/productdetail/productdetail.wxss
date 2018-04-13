@@ -109,12 +109,14 @@
   padding-top: 20rpx;
 }
 .buyTop{
-  margin: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 .buyTop_image{
   width:92px;
   height:92px;
-  margin-left:10px;
   display:inline-block;
   border-radius:6px;
   margin-top:-50px;
@@ -142,14 +144,14 @@
   width:22px;
   height:22px;
 }
-.buyline{
+/* .buyline{
   height: 1rpx;
   background-color: #ccc;
   margin-left:10px;
   margin-right: 10px; 
-}
+} */
 .buyNum{
-  margin: 20px;
+  margin: 10px;
   line-height:45px;
   border-top:1px solid #dbdbdb;
   border-bottom:1px solid #dbdbdb;
@@ -160,19 +162,21 @@
   color: #b5b5b5;
 }
 .buyNum_del{
-  margin:3px;
-  font-size: 60rpx;
-  color: #444;
+  margin-top: 20rpx;
+ width:50rpx;
+  height: 50rpx;
 }
 .buyNum_count{
   margin-left:5px;
   margin-right: 5px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
   font-size: 30rpx;
 }
 .buyNum_add{
-  margin:3px;
-  font-size: 40rpx;
+  margin-top: 20rpx;
+ width: 50rpx;
+  height: 50rpx;
 }
 .addShopCar{
   width:100%; 

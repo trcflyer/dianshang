@@ -1,17 +1,17 @@
 <view class="main">
   <view class="form-box">
     <form bindsubmit="formSubmit">
-      <view class='input-item-default'>
+      <view class="input-item-default {{currentInput==1 ? 'on' : ''}}">
         <view class='left'>收货人 </view>
-        <input value="{{address.name}}"  bindinput="bindName" />
+        <input value="{{address.name}}"  bindinput="bindName" bindfocus='bindFocusName' />
       </view>
-      <view class='input-item-default'>
+      <view class="input-item-default {{currentInput==2 ? 'on' : ''}}">
         <view class='left'>手机号码 </view>
-        <input type="number" value="{{address.phone}}"  bindinput="bindPhone" bindfocus='bindFocus' bindblur='bindBlur'/>
+        <input type="number" value="{{address.phone}}"  bindinput="bindPhone" bindfocus='bindFocusPhone' />
       </view>
-      <view class='input-item-default'>
+      <view class="input-item-default {{currentInput==3 ? 'on' : ''}}">
         <view class='left'>详细地址 </view>
-        <input value="{{address.detail}}"  bindinput="bindDetail" />
+        <input value="{{address.detail}}"  bindinput="bindDetail" bindfocus='bindFocusDetail' />
       </view>
       <button form-type="submit">保存</button>
     </form>

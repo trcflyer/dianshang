@@ -14,7 +14,9 @@
     "pages/gopay/gopay",
     "pages/gopoint/gopoint",
     "pages/logistics/logistics",
-    "pages/tem_contactbtn/tem_contactbtn"
+    "pages/tem_contactbtn/tem_contactbtn",
+    "pages/module/module",
+    "pages/home/home"
   ],
   "tabBar": {
     "color": "#666666",
@@ -25,6 +27,12 @@
         "iconPath": "image/homepage.png",
         "selectedIconPath": "image/homepage-fill.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/module/module",
+        "iconPath": "image/shop-car.png",
+        "selectedIconPath": "image/shop-car-o.png",
+        "text": "店家"
       },
       {
         "pagePath": "pages/shopcar/shopcar",
@@ -46,6 +54,6 @@
     "navigationBarTextStyle": "#FFFFFF",
     "backgroundColor": "#444444",
     "backgroundTextStyle": "#FFFFFF",
-    "enablePullDownRefresh": "true"
+    "enablePullDownRefresh": true
   }
 }

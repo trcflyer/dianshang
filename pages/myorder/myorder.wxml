@@ -5,12 +5,17 @@
       <!-- <view class="orders">我的订单</view> -->
       <view class="orders-list" wx:for="{{orders}}" wx:key="item" wx:for-index="idx" wx:for-item="item">
         <view class="orders-number"><text selectable='true'>订单编号：{{item.orderid}}</text>
-          <text class="orders-status" style='color: red;' wx:if="{{item.status == '6'}}">未付款</text>
           <text class="orders-status" wx:if="{{item.status == '1'}}">待发货</text>
           <text class="orders-status" wx:if="{{item.status == '2'}}">已发货</text>
-          <text class="orders-status" style='color: #b5b5b5;' wx:if="{{item.status == '3'}}">已签收</text>
+          <text class="orders-status" style='color: #b5b5b5;' wx:if="{{item.status == '3'}}">已完成</text>
           <text class="orders-status" style='color: #0b0' wx:if="{{item.status == '4'}}">问题订单</text>
-          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '5'}}">已退款</text>
+          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '5'}}">退货中</text>
+          <text class="orders-status" style='color: red;' wx:if="{{item.status == '6'}}">未付款</text>
+          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '7'}}">已取消</text>
+          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '8'}}">可退款</text>
+          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '9'}}">退款中</text>
+          <text class="orders-status" style='color: #b42f2d;' wx:if="{{item.status == '10'}}">已退款</text>
+
         </view>
         <view></view>
         <block wx:for="{{item.itemList}}" wx:key="index" wx:for-index="id" wx:for-item="index">

@@ -1,1 +1,13 @@
 /* aboutus.wxss */
+.contain{
+  text-align: center;
+  padding-top: 180rpx;
+}
+.content{
+  color: #444;
+  line-height: 60rpx;
+}
+.bottom{
+  position: relative;
+  bottom: -10rpx;
+}

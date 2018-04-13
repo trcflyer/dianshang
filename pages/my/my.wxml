@@ -7,46 +7,20 @@
     <text class="userid" selectable='true'>用户号：{{address.userid}}</text>
     <text class="points">积分: {{address.point}}</text>
   </view>
-  <view class="myorder-box">
-    <view class="myorder-manage">
-      <navigator url="/pages/myorder/myorder">我的订单</navigator>
-    </view>
-  </view>
 
-  <view class="address-box">
-    <view class="address-manage">
-      <navigator url="/pages/address/address?from=my">地址管理</navigator>
-    </view>
-    <view wx:if="{{hasAddress}}" class="address-list">
-      <view>{{address.name}}</view>
-      <view>{{address.phone}}</view>
-      <view>{{address.detail}}</view>
-    </view>
-  </view>
-
-  <view class="myorder-box">
-    <view class="myorder-manage">
-      <navigator url="/pages/collectlist/collectlist">我的收藏</navigator>
-    </view>
-  </view>
-  <view class="address-box">
-    <view class="address-manage">
-      <navigator url="/pages/pointcenter/pointcenter">积分商城</navigator>
-    </view>
-  </view>
-
-
-  <view class="myorder-box">
-    <view class="myorder-manage">
-      <navigator url="/pages/feedback/feedback">意见反馈</navigator>
-    </view>
-  </view>
-  <!-- <contact-button class="btn-contact" type="default-light" size="27" session-from="weapp">
-  </contact-button> -->
-  <view class="aboutus-box">
-    <view class="aboutus-manage">
-      <navigator url="/pages/aboutus/aboutus">关于我们</navigator>
-    </view>
+<view class="info_list">
+    <block wx:for="{{userListInfo}}">
+    <navigator url="{{navigatorurl}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"></view>
+        </view>
+        </navigator>
+    </block>
   </view>
 
 <import src="../tem_contactbtn/tem_contactbtn.wxml"/>

@@ -18,7 +18,38 @@ Page({
       phone: '',
       detail: ''
     },
-    hasAddress: false//是否显示地址详情
+    userListInfo: [{
+      icon: '../../image/iconfont-card.png',
+      navigatorurl:'/pages/myorder/myorder',
+      text: '我的订单',
+      isunread: false,
+      unreadNum: 2
+    }, {
+      icon: '../../image/iconfont-card.png',
+      navigatorurl: '/pages/address/address?from=my',
+      text: '地址管理',
+      isunread: false,
+      unreadNum: 2
+    }, {
+      icon: '../../image/iconfont-card.png',
+      navigatorurl: '/pages/collectlist/collectlist',
+      text: '我的收藏',
+      isunread: false,
+      unreadNum: 1
+    }, {
+        icon: '../../image/iconfont-card.png',
+        navigatorurl: '/pages/pointcenter/pointcenter',
+        text: '积分商城'
+    }, {
+        icon: '../../image/iconfont-card.png',
+        navigatorurl: '/pages/feedback/feedback',
+        text: '意见反馈'
+    }, {
+        icon: '../../image/iconfont-card.png',
+        navigatorurl: '/pages/aboutus/aboutus',
+        text: '关于我们'
+    }]
+
 
   },
 
@@ -70,18 +101,7 @@ Page({
    */
   onShow: function () {
     var that = this;
-    // /**
-    //  * 获取本地缓存 地址信息
-    //  */
-    // wx.getStorage({
-    //   key: 'address',
-    //   success: function (res) {
-    //     self.setData({
-    //       hasAddress: false,
-    //       address: res.data
-    //     })
-    //   }
-    // });
+   
     that.getUserByUserIdServlet();
 
   },
@@ -118,7 +138,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    var obj = wx.getStorageSync('user');
+    return {
+      title: '哇，发现一个好玩的应用，赶快来体验吧',
+      path: '/pages/index/index?fromId=' + obj.openid,
+      imageUrl: '../../image/shareImage.jpg'
+    }
   },
   /**
   * 获取用户保存的地址数据
@@ -142,7 +167,9 @@ Page({
           'address.name': res.data.user.username,
           'address.phone': res.data.user.phone,
           'address.detail': res.data.user.address,
-          'address.userid': res.data.user.userid
+          'address.userid': res.data.user.userid,
+          'address.sharecount': res.data.user.sharecount
+
         });
         wx.setStorage({
           key: 'address',

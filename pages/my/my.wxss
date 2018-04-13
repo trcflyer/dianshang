@@ -3,9 +3,9 @@
 
 .header{
     position: relative;
-    height: 200rpx;
+    height: 240rpx;
     line-height: 100rpx;
-    padding:30rpx 30rpx 30rpx 150rpx;
+    padding:40rpx 40rpx 40rpx 170rpx;
     box-sizing: border-box;
     background: #f6ac34;
     font-size: 28rpx;
@@ -15,21 +15,82 @@
     position: absolute;
     left: 30rpx;
     top: 30rpx;
-    width: 100rpx;
-    height: 100rpx;
+    width: 120rpx;
+    height: 120rpx;
     border-radius: 50%;
 }
 .header .userid{
     position: absolute;
-    top: 110rpx;
+    top: 150rpx;
     left: 40rpx;
 }
 .header .points{
     position: absolute;
-    top: 110rpx;
+    top: 150rpx;
     right: 40rpx;
 }
-.aboutus-box{
+.weui_cell{
+    position: relative;
+    display: flex;
+    padding: 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+}
+.weui_cell_hd{
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+}
+.weui_cell_hd image{
+  width: 100%;
+  height: 20px;
+  vertical-align: -2px;
+}
+.weui_cell_bd{
+  display: inline-block;
+}
+.weui_cell_bd_p{
+  font-size: 14px;
+  color: #939393;
+}
+.badge{
+  position: absolute;
+  top: 18px;
+  right: 40px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 8px;
+}
+.with_arrow{
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background-image: url(../../images/icon-arrowdown.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.weui_cell:after{
+    position: absolute;
+    right: 30rpx;
+    top: 50rpx;
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    border-top: 4rpx solid #cdcdcd;
+    border-right: 4rpx solid #cdcdcd;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* .aboutus-box{
     border-bottom: 1rpx solid #eee;
     color: #666;
     line-height: 90rpx;
@@ -110,7 +171,7 @@
     border-right: 4rpx solid #cdcdcd;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-}
+} */
 /* contact-button {
   position: fixed;
   padding: 8px;

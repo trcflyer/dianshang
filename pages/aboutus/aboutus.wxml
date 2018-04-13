@@ -1,2 +1,14 @@
-<!--aboutus.wxml-->
-<text>aboutus.wxml</text>
+<!--aboutus.wxml   -->
+<view class='contain'>
+  <view class='content'>
+     <image wx:for="{{imagelist}}" wx:key="image" style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" src="{{item}}"  ></image>
+      <view style='margin-top:-18px;'><text style='font-size:28rpx;color:#111;'>扫码关注公众号</text></view>
+     <view style='font-size:34rpx;'><text selectable='true'>客服微信：kanyinet</text></view>
+      <view style='font-size:34rpx;'><text selectable='true'>客服电话：18702134396</text></view>
+    <view style='margin-top:20px;'>实体商店，实力库存</view>
+    <view>实惠价格，真诚服务</view>
+  </view>
+  <view class='bottom'>
+    <text>上海澜懿网络科技有限公司</text>
+  </view>
+</view>

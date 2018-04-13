@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imagelist: ['../../image/ewm.jpg'],
   },
 
   /**
@@ -61,6 +61,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
-  }
+    var obj = wx.getStorageSync('user');
+    return {
+      title: '哇，发现一个好玩的应用，赶快来体验吧',
+      path: '/pages/index/index?fromId=' + obj.openid,
+      imageUrl: '../../image/shareImage.jpg'
+    }
+  },
+
 })
